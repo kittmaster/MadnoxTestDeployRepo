@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="repository.kittmaster" name="Kittmaster's Test Deploy Repo" version="1.0.10" provider-name="kittmaster">
+<addons><addon id="repository.kittmaster" name="Kittmaster's Test Deploy Repo" version="1.0.09" provider-name="kittmaster">
     <extension point="xbmc.addon.repository" name="MadnoxTestDeployRepo">
 		<dir minversion="20.0.0" maxversion="20.9.9">
             <info compressed="false">https://raw.githubusercontent.com/kittmaster/MadnoxTestDeployRepo/master/nexus/zips/addons.xml</info>
