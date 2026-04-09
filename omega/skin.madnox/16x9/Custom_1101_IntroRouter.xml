@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	This file acts as a router on startup.
+	It checks the value of the 'IntroVideoSelectStartupValue' skin string.
+	- If the string has a value (a video is selected), it plays the video.
+	- If the string is empty, it immediately loads your standard splash screen (window 1103).
+	To enable this, set this file as the startup window in your skin's addon.xml file.
+	Example: <startup>custom_1101_Startup.xml</startup>
+-->
+<window id="1101" type="window">
+	<!-- Run the migration script only once, splits extra folder off to skin helper to stay under 100MB Github limit -->
+	<!-- <onload condition="!Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload> -->
+	<onload condition="Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
+	<!-- Run Template Script -->
+	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)"> RunScript(script.skin.madnox, action=apply_template) </onload>
+	<!-- Mark Initialization Complete -->
+	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)"> Skin.SetBool(Madnox.Settings.Initialized) </onload>
+	<!-- Reload The Skin After Initialization -->
+	<onload condition="!Skin.HasSetting(Madnox.Settings.Reloaded)"> Skin.SetBool(Madnox.Settings.Reloaded) </onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox.Settings.Reloaded)"> ReloadSkin() </onload>
+
+	<onload>Skin.SetBool(TMDbHelper.Service)</onload>
+	<onload>Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
+	<!-- <onload>RunScript(script.skin.info.service)</onload> -->
+	<onload>Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
+	<onload condition="!IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">Skin.Reset(TMDBHelper.MonitorContainer)</onload>
+	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fanart)|Art(tvshow.fanart)|Art(landscape)|Art(thumb)|Icon,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(VideoBlurEnabled)">SetProperty(TMDbHelper.Blur.Fallback,special://home/addons/resource.images.skin.madnox/resources/backgrounds/default_livecases.jpg,Home)</onload>
+	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
+	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
+	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
+
+	<animation effect="fade" delay="1000" time="480">WindowOpen</animation>
+	<animation effect="fade" time="480">WindowClose</animation>
+	<include>onunload_SkinSettings</include>
+
+	<!-- === Intro Video Logic === -->
+	<!-- If A Video Is Selected, Give Focus To The Hidden Button To Start Playback -->
+	<onload condition="!String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
+
+	<!-- Use A Global Skin Setting Instead Of A Window Property. This Is Faster And Persistent. -->
+	<onload condition="!String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
+
+	<!-- Else (If No Video Is Selected), Go Directly To The Madnox Splash Screen -->
+	<onload condition="String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
+
+	<controls>
+		<!-- This Is A Hidden Control That Acts As A Trigger -->
+		<control type="button" id="10">
+			<include>HiddenObject</include>
+			<!-- The Onfocus Commands Are Executed When Setfocus(10) Is Called -->
+			<onfocus>ReplaceWindow(1108)</onfocus>
+			<onfocus>PlayMedia($ESCINFO[Skin.String(IntroVideoSelectStartupValue)])</onfocus>
+		</control>
+	</controls>
+</window>
