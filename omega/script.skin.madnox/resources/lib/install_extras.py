@@ -94,6 +94,7 @@ def run():
 
     # Permanent sentinel — Home.xml onload never fires again
     xbmc.executebuiltin('Skin.SetBoolSetting(Madnox.ExtrasInstalled)')
+    xbmc.executebuiltin('Skin.SetString(Madnox.ExtrasInstalled,true)')
 
     dialog.ok(
         'Madnox Setup',
