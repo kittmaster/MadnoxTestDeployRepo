@@ -37,23 +37,10 @@ def _set_addon_enabled(addon_id, enabled):
         "id": 1
     }))
 
-def _wait_for_addon(addon_id, timeout_ms=15000):
-    """Poll until addon appears in Kodi's addon table, or timeout."""
-    elapsed = 0
-    while elapsed < timeout_ms:
-        result = json.loads(xbmc.executeJSONRPC(json.dumps({
-            "jsonrpc": "2.0",
-            "method": "Addons.GetAddonDetails",
-            "params": {"addonid": addon_id},
-            "id": 1
-        })))
-        if 'result' in result:
-            return True
-        xbmc.sleep(500)
-        elapsed += 500
-    return False
-
 def run():
+    # Delay for 2 seconds to let the Home Screen fully build and settle.
+    xbmc.sleep(2000)
+
     dialog = xbmcgui.Dialog()
 
     if not dialog.yesno(
@@ -63,8 +50,7 @@ def run():
         'Everything installs [B]disabled[/B] — enable only what you want\n'
         'in [I]Settings → Addons → My Addons[/I].'
     ):
-        # Declined — mark done so this never fires again
-        xbmc.executebuiltin('Skin.SetBoolSetting(Madnox.ExtrasInstalled)')
+        xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
         return
 
     progress = xbmcgui.DialogProgress()
@@ -78,23 +64,46 @@ def run():
         pct = int((i / total) * 100)
         progress.update(pct, f'Installing: [B]{label}[/B]')
 
-        # Skip if already present
         if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
             continue
 
-        xbmc.executebuiltin(f'InstallAddon({addon_id})', True)  # True = wait for dialog
-        _wait_for_addon(addon_id)
+        xbmc.executebuiltin(f'InstallAddon({addon_id})', False)
 
-        # Immediately disable — user opts in later
-        _set_addon_enabled(addon_id, False)
+        # Polling Loop
+        elapsed = 0
+        timeout_ms = 45000
+        
+        while elapsed < timeout_ms:
+            if progress.iscanceled():
+                break
+                
+            if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
+                break
+            
+            # --- THE BYPASS (FIXED) ---
+            # We MUST use string names (dialogconfirm, yesnodialog) for visibility checks.
+            # 1301 is DialogConfirm, 1300 is DialogYesNo
+            # Button 11 is Kodi's standard ID for the "Yes" button
+            if xbmc.getCondVisibility('Window.IsActive(dialogconfirm)'):
+                xbmc.executebuiltin('SendClick(1301, 11)')
+            
+            if xbmc.getCondVisibility('Window.IsActive(yesnodialog)'):
+                xbmc.executebuiltin('SendClick(1300, 11)')
+
+            xbmc.sleep(250)
+            elapsed += 250
+
+        # Wait an extra second for Kodi's internal database to settle before disabling
+        xbmc.sleep(1000)
+        
+        if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
+            _set_addon_enabled(addon_id, False)
 
     progress.update(100, 'Done!')
     xbmc.sleep(800)
     progress.close()
 
-    # Permanent sentinel — Home.xml onload never fires again
-    xbmc.executebuiltin('Skin.SetBoolSetting(Madnox.ExtrasInstalled)')
-    xbmc.executebuiltin('Skin.SetString(Madnox.ExtrasInstalled,true)')
+    xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
 
     dialog.ok(
         'Madnox Setup',

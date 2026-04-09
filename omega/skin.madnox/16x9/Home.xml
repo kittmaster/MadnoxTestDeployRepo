@@ -19,12 +19,9 @@
 	<onload condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onload>
 	<!-- <onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload> -->
 	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(script.skin.madnox, action=validate_tmdb_helper)</onload>
-	<!-- ================================================================= -->
-	<!-- ON-DEMAND ADDONS (Removed from addon.xml dependencies)            -->
-	<!-- ================================================================= -->
 
-	<!-- Optional extras: installed once via first-run wizard in script.skin.madnox -->
-	<onload condition="!Skin.HasSetting(Madnox.ExtrasInstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
+	<!-- Optional extras: Ask only after the skin has fully initialized via template -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
 
 	<!-- Skin Shortcuts -->
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>

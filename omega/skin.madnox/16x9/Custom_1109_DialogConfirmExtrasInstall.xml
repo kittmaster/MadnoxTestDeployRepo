@@ -41,7 +41,7 @@
 				<height>180</height>
 				<font>Font28_Reg</font>
 				<align>center</align>
-				<label>This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings → Addons.</label>
+				<label>This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Addons.</label>
 			</control>
 
 			<control type="grouplist" id="9000">

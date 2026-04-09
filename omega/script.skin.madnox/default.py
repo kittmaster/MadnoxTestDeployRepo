@@ -7,7 +7,6 @@ from resources.lib import apply_template
 from resources.lib import color_loader
 from resources.lib import core_color_helper
 from resources.lib import intro_preview
-from resources.lib import install_extras
 from resources.lib import jump_to_letter
 from resources.lib import madnox_cinema
 from resources.lib import play_album_songs
@@ -88,10 +87,7 @@ def main():
         elif action == "migrate_bgs":
             migrate_bgs.run(params)
         elif action == "smsjump":
-            jump_to_letter.run(params)
-        elif action == 'install_extras':
-            from resources.lib.install_extras import run
-            run()            
+            jump_to_letter.run(params)            
             
     finally:
         # The 'finally' block ensures that the moment the script finishes, 
