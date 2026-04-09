@@ -1218,6 +1218,11 @@
 							<onclick>ActivateWindow(1107)</onclick>
 							<include>SettingsButton</include>
 						</control>
+						<control type="button" id="541">
+							<label>[COLOR yellow]Re-run Optional Extras Installer[/COLOR]</label>
+							<onclick>ActivateWindow(1109)</onclick>
+							<include>SettingsButton</include>
+						</control>						
 						<control type="button" id="542">
 							<label>Madnox [LOWERCASE]$LOCALIZE[20331] $LOCALIZE[24069][/LOWERCASE]</label>
 							<!-- <label2>$VAR[MadnoxBackupFileVersionLabel2Var]</label2> -->

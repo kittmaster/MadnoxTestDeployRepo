@@ -22,46 +22,11 @@
 	<!-- ================================================================= -->
 	<!-- ON-DEMAND ADDONS (Removed from addon.xml dependencies)            -->
 	<!-- ================================================================= -->
-	<!-- script.cu.lrclyrics -->
-	<onload condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onload>
-	<!-- script.trakt -->
-	<onload condition="!System.HasAddon(script.trakt)">InstallAddon(script.trakt)</onload>
-	<!-- service.upnext -->
-	<onload condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onload>
-	<!-- script.artistslideshow -->
-	<onload condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onload>
-	<!-- script.rss.editor -->
-	<onload condition="!System.HasAddon(script.rss.editor)">InstallAddon(script.rss.editor)</onload>
-	<!-- plugin.library.node.editor -->
-	<onload condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onload>
-	<!-- resource.images.weathericons.3d-coloured -->
-	<onload condition="!System.HasAddon(resource.images.weathericons.3d-coloured)">InstallAddon(resource.images.weathericons.3d-coloured)</onload>
-	<!-- resource.images.weatherfanart.multi -->
-	<onload condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onload>
-	<!-- resource.images.studios.white -->
-	<onload condition="!System.HasAddon(resource.images.studios.white)">InstallAddon(resource.images.studios.white)</onload>
-	<!-- resource.images.studios.coloured -->
-	<onload condition="!System.HasAddon(resource.images.studios.coloured)">InstallAddon(resource.images.studios.coloured)</onload>
-	<!-- resource.images.recordlabels.white -->
-	<onload condition="!System.HasAddon(resource.images.recordlabels.white)">InstallAddon(resource.images.recordlabels.white)</onload>
-	<!-- resource.images.languageflags.rounded -->
-	<onload condition="!System.HasAddon(resource.images.languageflags.rounded)">InstallAddon(resource.images.languageflags.rounded)</onload>
-	<!-- resource.images.musicgenreicons.text -->
-	<onload condition="!System.HasAddon(resource.images.musicgenreicons.text)">InstallAddon(resource.images.musicgenreicons.text)</onload>
-	<!-- resource.images.moviecountryicons.flags -->
-	<onload condition="!System.HasAddon(resource.images.moviecountryicons.flags)">InstallAddon(resource.images.moviecountryicons.flags)</onload>
-	<!-- script.artwork.dump -->
-	<onload condition="!System.HasAddon(script.artwork.dump)">InstallAddon(script.artwork.dump)</onload>
-	<!-- service.tvtunes -->
-	<onload condition="!System.HasAddon(service.tvtunes)">InstallAddon(service.tvtunes)</onload>
-	<!-- script.wikipedia -->
-	<onload condition="!System.HasAddon(script.wikipedia)">InstallAddon(script.wikipedia)</onload>
-	<!-- script.preshowexperience -->
-	<onload condition="!System.HasAddon(script.preshowexperience)">InstallAddon(script.preshowexperience)</onload>
-	<!-- resource.images.moviegenreicons.filmstrip-hd.bw -->
-	<onload condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.bw)</onload>
-	<!-- resource.images.moviegenreicons.filmstrip-hd.colour -->
-	<onload condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.colour)">InstallAddon(resource.images.moviegenreicons.filmstrip-hd.colour)</onload>
+	
+	<!-- Optional extras: installed once via first-run wizard in script.skin.madnox -->
+	<onload condition="!Skin.HasSetting(Madnox.ExtrasInstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
+
+	
 	<!-- Skin Shortcuts -->
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
 	<!-- 1st Run Settings File Init And Populate Default Values -->
