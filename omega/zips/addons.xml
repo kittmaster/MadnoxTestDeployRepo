@@ -375,10 +375,11 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.02.06" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.01" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
-		<import addon="script.skin.madnox" version="1.0.0" />
+		<import addon="script.skin.madnox" version="1.0.1" />
+		<import addon="resource.images.skin.madnox" version="1.0.0" />		
 		<import addon="script.skinshortcuts" version="1.0.17" />
 		<import addon="plugin.video.themoviedb.helper" version="6.11.5" />
 		<import addon="script.image.resource.select" version="2.0.4" />
