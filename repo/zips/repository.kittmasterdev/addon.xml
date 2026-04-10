@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.kittmaster.dev" name="Kittmaster's Repo" version="1.0.11" provider-name="kittmaster">
+<addon id="repository.kittmasterdev" name="Kittmaster's Dev Repo" version="1.0.11" provider-name="kittmaster">
 	<extension point="xbmc.addon.repository" name="MadnoxTestDeployRepo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/kittmaster/MadnoxTestDeployRepo/master/repo/zips/addons.xml</info>
