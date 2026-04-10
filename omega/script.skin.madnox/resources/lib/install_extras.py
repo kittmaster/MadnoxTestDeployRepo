@@ -8,7 +8,6 @@ ADDON = xbmcaddon.Addon('script.skin.madnox')
 # (addon_id, friendly_label)
 OPTIONAL_EXTRAS = [
     ('script.cu.lrclyrics',                             'LRC Lyrics'),
-    ('script.trakt',                                    'Trakt'),
     ('service.upnext',                                  'Up Next'),
     ('script.artistslideshow',                          'Artist Slideshow'),
     ('script.rss.editor',                               'RSS Editor'),
@@ -27,6 +26,7 @@ OPTIONAL_EXTRAS = [
     ('script.preshowexperience',                        'Preshow Experience'),
     ('resource.images.moviegenreicons.filmstrip-hd.bw',     'Movie Genre Icons (B&W)'),
     ('resource.images.moviegenreicons.filmstrip-hd.colour',  'Movie Genre Icons (Colour)'),
+    ('script.trakt',                                    'Trakt'),
 ]
 
 def _set_addon_enabled(addon_id, enabled):
