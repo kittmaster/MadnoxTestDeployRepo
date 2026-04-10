@@ -28,8 +28,8 @@
 		<disclaimer>The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Madnox v3.</disclaimer>
 		<platform>all</platform>
 		<forum>https://forum.kodi.tv/forumdisplay.php?fid=314</forum>
-		<source>https://github.com/kittmaster/MadnoxTestDeployRepo/tree/master/repo/zips/repository.kittmaster</source>
-		<website>https://github.com/kittmaster/MadnoxTestDeployRepo/tree/master/repo/zips/repository.kittmaster</website>
+		<source>https://github.com/kittmaster/MadnoxTestDeployRepo/tree/master/repo/zips/repository.kittmaster.dev</source>
+		<website>https://github.com/kittmaster/MadnoxTestDeployRepo/tree/master/repo/zips/repository.kittmaster.dev</website>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
