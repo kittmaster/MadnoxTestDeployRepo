@@ -13,7 +13,7 @@ def run(params):
         if not file_path:
             file_path = xbmc.getInfoLabel('Skin.String(IntroVideoSelectStartupValue)')
 
-        if file_path == 'special://skin/extras/intro-omega.mp4':
+        if file_path == 'special://home/addons/script.skin.madnox/resources/extras/intro-omega.mp4':
             home_window.setProperty('IntroVideo.Label', 'Intro-omega.mp4 - Skin built-in')
             
         elif file_path and file_path.lower() != 'none':

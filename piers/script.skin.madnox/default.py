@@ -7,17 +7,21 @@ from resources.lib import apply_template
 from resources.lib import color_loader
 from resources.lib import core_color_helper
 from resources.lib import intro_preview
+from resources.lib import install_extras
+from resources.lib import jump_to_letter
 from resources.lib import madnox_cinema
 from resources.lib import play_album_songs
 from resources.lib import play_all_music_videos_from_container
 from resources.lib import play_trailer
 from resources.lib import process_ratings
+from resources.lib import migrate_bgs
 from resources.lib import script_decrement_movie as decrement_movie
 from resources.lib import script_decrement_person as decrement_person
 from resources.lib import set_intro_label
 from resources.lib import tmdb_helper_settingswriter as TMDb_Helper_SettingsWriter
 from resources.lib import tmdb_installed_validation
 from resources.lib import trailer_rolling
+
 
 def get_params():
     params = {}
@@ -80,7 +84,14 @@ def main():
         elif action == "madnox_cinema":
             madnox_cinema.run(params)
         elif action == "process_ratings":
-            process_ratings.run(params)      
+            process_ratings.run(params)
+        elif action == "migrate_bgs":
+            migrate_bgs.run(params)
+        elif action == "smsjump":
+            jump_to_letter.run(params)
+        elif action == 'install_extras':
+            from resources.lib.install_extras import run
+            run()            
             
     finally:
         # The 'finally' block ensures that the moment the script finishes, 

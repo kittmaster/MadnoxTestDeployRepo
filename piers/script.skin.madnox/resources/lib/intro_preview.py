@@ -9,21 +9,27 @@ CONTROL_ID = 541
 
 class IntroPlayer:
     def __init__(self):
-        self.video_path = xbmc.getInfoLabel('Skin.String(IntroVideoSelectStartupValue)')
         self.player = xbmc.Player()
         self.playback_started = False
+        self.video_path = None
 
     def run_player(self):
-        # If no path is set or it's 'none', do nothing.
-        if not self.video_path or self.video_path.lower() == 'none':
-            return
-
         # --- STABILITY CHECK & DELAY ---
         # Wait for 1.5 seconds. If focus is lost during this time, abort.
+        # video_path is intentionally resolved AFTER this delay so Kodi's
+        # infolabel engine has time to warm up on first hover — reading it in
+        # __init__ can return empty/stale on the very first call in a session.
         for _ in range(15):
             if not xbmc.getCondVisibility(f'Control.HasFocus({CONTROL_ID})') or xbmc.Monitor().abortRequested():
                 return
             xbmc.sleep(200)
+
+        # Resolve path here, after the stability window has passed.
+        self.video_path = xbmc.getInfoLabel('Skin.String(IntroVideoSelectStartupValue)')
+
+        # If no path is set or it's 'none', do nothing.
+        if not self.video_path or self.video_path.lower() == 'none':
+            return
 
         # If focus was held, proceed. Check if file exists.
         if not xbmcvfs.exists(self.video_path):

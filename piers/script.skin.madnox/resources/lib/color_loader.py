@@ -23,7 +23,7 @@ class MyColorDialog(xbmcgui.WindowXMLDialog):
             if from_skin:
                 self.color_file = xbmcvfs.translatePath(from_skin)
             else:
-                self.color_file = xbmcvfs.translatePath("special://skin/extras/colors/madnox-(24-colors).xml")
+                self.color_file = xbmcvfs.translatePath("special://home/addons/script.skin.madnox/resources/extras/colors/madnox-(24-colors).xml")
         self._last_palette_path = self.color_file
         param_name = xbmc.getInfoLabel("Window(Home).Property(ActiveControlPanelName)")
         self.active_panel_setting = param_name
@@ -110,7 +110,7 @@ class MyColorDialog(xbmcgui.WindowXMLDialog):
         while not self._monitor_stop:
             time.sleep(1.2)
             current_path = xbmc.getInfoLabel("Skin.String(mycolorfile)")
-            current_path = xbmcvfs.translatePath(current_path) if current_path else xbmcvfs.translatePath("special://skin/extras/colors/madnox-(24-colors).xml")
+            current_path = xbmcvfs.translatePath(current_path) if current_path else xbmcvfs.translatePath("special://home/addons/script.skin.madnox/resources/extras/colors/madnox-(24-colors).xml")
             if current_path != self._last_palette_path:
                 self._last_palette_path = current_path
                 self.color_file = current_path
