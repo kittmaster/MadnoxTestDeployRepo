@@ -48,7 +48,7 @@ def run():
         'Download optional extras in the background?\n\n'
         '[B]Flags, studio icons, genre art, lyrics, TV tunes[/B] and more.\n\n'
         'Everything installs [B]disabled[/B] — enable only what you want\n'
-        'in [I]Settings › Addons › My Addons[/I].'
+        'in [I]Settings > Addons > My Addons[/I].'
     ):
         xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
         return
@@ -62,7 +62,7 @@ def run():
             break
 
         pct = int((i / total) * 100)
-        progress.update(pct, f'Installing: [B]{label}[/B]')
+        progress.update(pct, f'Wait For Closing Dialog - Installing: [B]{label}[/B]')
 
         if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
             continue
@@ -108,5 +108,5 @@ def run():
     dialog.ok(
         'Madnox Setup',
         'Optional extras installed and [B]disabled[/B].\n\n'
-        'Enable what you want in [I]Settings › Addons › My Addons[/I].'
+        'Enable what you want in [I]Settings > Addons > My Addons[/I].'
     )
