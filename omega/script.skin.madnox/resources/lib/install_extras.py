@@ -7,26 +7,26 @@ ADDON = xbmcaddon.Addon('script.skin.madnox')
 
 # (addon_id, friendly_label)
 OPTIONAL_EXTRAS = [
-    ('script.cu.lrclyrics',                             'LRC Lyrics'),
-    ('service.upnext',                                  'Up Next'),
-    ('script.artistslideshow',                          'Artist Slideshow'),
-    ('script.rss.editor',                               'RSS Editor'),
-    ('plugin.library.node.editor',                      'Library Node Editor'),
-    ('resource.images.weathericons.3d-coloured',        'Weather Icons (3D)'),
-    ('resource.images.weatherfanart.multi',             'Weather Fanart'),
-    ('resource.images.studios.white',                   'Studio Icons (White)'),
-    ('resource.images.studios.coloured',                'Studio Icons (Colour)'),
-    ('resource.images.recordlabels.white',              'Record Labels'),
-    ('resource.images.languageflags.rounded',           'Language Flags'),
-    ('resource.images.musicgenreicons.text',            'Music Genre Icons'),
-    ('resource.images.moviecountryicons.flags',         'Country Icons'),
-    ('script.artwork.dump',                             'Artwork Dump'),
-    ('service.tvtunes',                                 'TV Tunes'),
-    ('script.wikipedia',                                'Wikipedia'),
-    ('script.preshowexperience',                        'Preshow Experience'),
+    ('script.cu.lrclyrics',                                 'LRC Lyrics'),
+    ('service.upnext',                                      'Up Next'),
+    ('script.artistslideshow',                              'Artist Slideshow'),
+    ('script.rss.editor',                                   'RSS Editor'),
+    ('plugin.library.node.editor',                          'Library Node Editor'),
+    ('resource.images.weathericons.3d-coloured',            'Weather Icons (3D)'),
+    ('resource.images.weatherfanart.multi',                 'Weather Fanart'),
+    ('resource.images.studios.white',                       'Studio Icons (White)'),
+    ('resource.images.studios.coloured',                    'Studio Icons (Colour)'),
+    ('resource.images.recordlabels.white',                  'Record Labels'),
+    ('resource.images.languageflags.rounded',               'Language Flags'),
+    ('resource.images.musicgenreicons.text',                'Music Genre Icons'),
+    ('resource.images.moviecountryicons.flags',             'Country Icons'),
+    ('script.artwork.dump',                                 'Artwork Dump'),
+    ('service.tvtunes',                                     'TV Tunes'),
+    ('script.wikipedia',                                    'Wikipedia'),
+    ('script.preshowexperience',                            'Preshow Experience'),
     ('resource.images.moviegenreicons.filmstrip-hd.bw',     'Movie Genre Icons (B&W)'),
-    ('resource.images.moviegenreicons.filmstrip-hd.colour',  'Movie Genre Icons (Colour)'),
-    ('script.trakt',                                    'Trakt'),
+    ('resource.images.moviegenreicons.filmstrip-hd.colour', 'Movie Genre Icons (Colour)'),
+    ('script.trakt',                                        'Trakt'),
 ]
 
 def _set_addon_enabled(addon_id, enabled):
@@ -48,7 +48,7 @@ def run():
         'Download optional extras in the background?\n\n'
         '[B]Flags, studio icons, genre art, lyrics, TV tunes[/B] and more.\n\n'
         'Everything installs [B]disabled[/B] — enable only what you want\n'
-        'in [I]Settings > Addons > My Addons[/I].'
+        'in [I]Settings > Skin Settings > Addons[/I].'
     ):
         xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
         return
@@ -108,5 +108,5 @@ def run():
     dialog.ok(
         'Madnox Setup',
         'Optional extras installed and [B]disabled[/B].\n\n'
-        'Enable what you want in [I]Settings > Addons > My Addons[/I].'
+        'Enable what you want in [I]Settings > Skin Settings > Addons[/I].'
     )
