@@ -45,6 +45,23 @@ def _set_addon_enabled(addon_id, enabled):
     }))
 
 
+def _indent_xml(elem, level=0):
+    """Fallback XML indentation for Python versions older than 3.9"""
+    i = "\n" + level * "    "
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "    "
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+        for child in elem:
+            _indent_xml(child, level + 1)
+        if not child.tail or not child.tail.strip():
+            child.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
+
+
 def _inject_repo_sources():
     sources_path = 'special://userdata/sources.xml'
 
@@ -99,7 +116,12 @@ def _inject_repo_sources():
     if injected == 0:
         return True
 
-    ET.indent(root, space='    ')
+    # Use native indent if available (Python 3.9+), otherwise fallback
+    if hasattr(ET, 'indent'):
+        ET.indent(root, space='    ')
+    else:
+        _indent_xml(root)
+
     xml_str = ET.tostring(root, encoding='unicode')
     xml_out = '<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n' + xml_str
 
