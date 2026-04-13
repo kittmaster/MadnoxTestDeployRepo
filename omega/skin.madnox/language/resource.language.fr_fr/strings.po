@@ -2623,6 +2623,11 @@ msgctxt "#31520"
 msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
 msgstr "Cela réexécutera le programme d’installation des extras facultatifs. Tous les extras seront téléchargés et installés dans un état désactivé. Activez uniquement ce dont vous avez besoin dans Paramètres > Paramètres de skin > Modules complémentaires."
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr "Module complémentaire de ressources d'images Madnox"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."

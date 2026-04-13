@@ -406,6 +406,12 @@
 		<value>$INFO[System.AddonVersion(script.skin.madnox),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
+	<variable name="AddonMadnoxSkinImagesServiceVar">
+		<value condition="!System.HasAddon(resource.images.skin.madnox)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(resource.images.skin.madnox)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(resource.images.skin.madnox),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>
+
 	<variable name="AddonSkinShortcutsVar">
 		<value condition="!System.HasAddon(script.skinshortcuts)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.skinshortcuts)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>

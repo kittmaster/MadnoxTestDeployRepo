@@ -1214,19 +1214,19 @@
 							<include>SettingsLabel</include>
 						</control>
 						<control type="button" id="540">
-							<label>[COLOR red]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]...[/COLOR]</label>
+							<label>[COLOR FFCC4444]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]...[/COLOR]</label>
 							<onclick>ActivateWindow(1107)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="554">
-							<label>[COLOR yellow]Re-run Optional Extras Installer[/COLOR]</label>
+							<label>[COLOR FFEEEE9B]$LOCALIZE[31518][/COLOR]</label>
 							<onclick>ActivateWindow(1109)</onclick>
 							<include>SettingsButton</include>
-						</control>						
+						</control>
 						<control type="button" id="542">
 							<label>Madnox [LOWERCASE]$LOCALIZE[20331] $LOCALIZE[24069][/LOWERCASE]</label>
 							<!-- <label2>$VAR[MadnoxBackupFileVersionLabel2Var]</label2> -->
-							<label2>Skin: v$INFO[System.AddonVersion(skin.madnox)] | Helper: v$INFO[System.AddonVersion(script.skin.madnox)]</label2>
+							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[409]: v$INFO[System.AddonVersion(script.skin.madnox)]</label2>
 							<include>SettingsButton</include>
 						</control>
 						<control type="label" id="520">
@@ -1559,8 +1559,16 @@
 							<label>$LOCALIZE[31481]</label>
 							<label2>$VAR[AddonMadnoxSkinServiceVar]</label2>
 							<onclick condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onclick>
-							<onclick condition="!System.AddonIsEnabled(script.skin.madnox">EnableAddon(script.skin.madnox)</onclick>
+							<onclick condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onclick>
 							<onclick condition="System.HasAddon(script.skin.madnox)">Addon.OpenSettings(script.skin.madnox)</onclick>
+							<include>SettingsRadioButton</include>
+						</control>
+						<control type="button" id="715">
+							<label>$LOCALIZE[31521]</label>
+							<label2>$VAR[AddonMadnoxSkinImagesServiceVar]</label2>
+							<onclick condition="!System.HasAddon(resource.images.skin.madnox)">InstallAddon(resource.images.skin.madnox)</onclick>
+							<onclick condition="!System.AddonIsEnabled(resource.images.skin.madnox)">EnableAddon(resource.images.skin.madnox)</onclick>
+							<onclick condition="System.HasAddon(resource.images.skin.madnox)">Addon.OpenSettings(resource.images.skin.madnox)</onclick>
 							<include>SettingsRadioButton</include>
 						</control>
 						<control type="button" id="702">

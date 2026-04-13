@@ -2608,6 +2608,26 @@ msgctxt "#31517"
 msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
 msgstr "Zeigt den Menüpunkt im Hauptkontextmenü an oder verbirgt ihn (S auf der Tastatur). HINWEIS: Dieser Menüpunkt ist unabhängig von dieser Einstellung NUR auf dem Startbildschirm sichtbar."
 
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "Führen Sie das Installationsprogramm für optionale Extras erneut aus"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "Installationsprogramm für optionale Extras"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "Dadurch wird das Installationsprogramm für optionale Extras erneut ausgeführt. Alle Extras werden im deaktivierten Zustand heruntergeladen und installiert. Aktivieren Sie unter Einstellungen > Skin-Einstellungen > Add-ons nur das, was Sie benötigen."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31521"
+msgid "Madnox image resource addon"
+msgstr "Madnox-Bildressourcen-Add-on"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
