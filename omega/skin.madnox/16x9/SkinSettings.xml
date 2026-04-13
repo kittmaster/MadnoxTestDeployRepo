@@ -1226,7 +1226,7 @@
 						<control type="button" id="542">
 							<label>Madnox [LOWERCASE]$LOCALIZE[20331] $LOCALIZE[24069][/LOWERCASE]</label>
 							<!-- <label2>$VAR[MadnoxBackupFileVersionLabel2Var]</label2> -->
-							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[409]: v$INFO[System.AddonVersion(script.skin.madnox)]</label2>
+							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[24009]: v$INFO[System.AddonVersion(script.skin.madnox)] | $LOCALIZE[31522]: v$INFO[System.AddonVersion(resource.images.skin.madnox)]</label2>
 							<include>SettingsButton</include>
 						</control>
 						<control type="label" id="520">

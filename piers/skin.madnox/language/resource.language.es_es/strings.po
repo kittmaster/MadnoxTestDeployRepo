@@ -2628,6 +2628,11 @@ msgctxt "#31521"
 msgid "Madnox image resource addon"
 msgstr "Complemento de recursos de imagen de Madnox"
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31522"
+msgid "Images"
+msgstr "Imágenes"
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
