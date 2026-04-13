@@ -8,11 +8,10 @@ import xml.etree.ElementTree as ET
 ADDON = xbmcaddon.Addon('script.skin.madnox')
 
 REPO_SOURCES = [
-    ('lynxstrike.repo',          'https://lynxstrike.github.io/lynxstrike.repo/'),
-    ('repository.jurialmunkey',  'https://jurialmunkey.github.io/repository.jurialmunkey/'),
+    ('lynxstrike.repo',         'https://lynxstrike.github.io/lynxstrike.repo/'),
+    ('repository.jurialmunkey', 'https://jurialmunkey.github.io/repository.jurialmunkey/'),
 ]
 
-# (addon_id, friendly_label)
 OPTIONAL_EXTRAS = [
     ('script.cu.lrclyrics',                              'LRC Lyrics'),
     ('service.upnext',                                   'Up Next'),
@@ -47,15 +46,8 @@ def _set_addon_enabled(addon_id, enabled):
 
 
 def _inject_repo_sources():
-    """
-    Reads sources.xml and injects any missing repo entries into <files>.
-    Uses special://userdata/ so it works in portable and standard installs alike.
-    Returns True if the file was modified (or already correct), False on error.
-    """
     sources_path = 'special://userdata/sources.xml'
-    translated   = xbmcvfs.translatePath(sources_path)
 
-    # --- Read ---
     try:
         with xbmcvfs.File(sources_path, 'r') as fh:
             raw = fh.read()
@@ -66,21 +58,23 @@ def _inject_repo_sources():
         xbmc.log(f'[Madnox] Could not read sources.xml: {exc}', xbmc.LOGERROR)
         return False
 
-    # --- Parse ---
     try:
-        tree = ET.ElementTree(ET.fromstring(raw))
-        root = tree.getroot()
+        root = ET.fromstring(raw)
+        if root is None:
+            xbmc.log('[Madnox] sources.xml parsed to None', xbmc.LOGERROR)
+            return False
     except ET.ParseError as exc:
         xbmc.log(f'[Madnox] sources.xml parse error: {exc}', xbmc.LOGERROR)
         return False
 
-    # Locate or create <files> section
     files_node = root.find('files')
     if files_node is None:
         files_node = ET.SubElement(root, 'files')
-        ET.SubElement(files_node, 'default').set('pathversion', '1')
+        default_el = ET.SubElement(files_node, 'default')
+        default_el.set('pathversion', '1')
 
-    # Collect existing paths so we don't duplicate
+    assert files_node is not None  # narrow type for Pylance
+
     existing_paths = {
         src.findtext('path', '').rstrip('/')
         for src in files_node.findall('source')
@@ -89,25 +83,24 @@ def _inject_repo_sources():
     injected = 0
     for name, url in REPO_SOURCES:
         if url.rstrip('/') in existing_paths:
-            xbmc.log(f'[Madnox] Repo already in sources.xml, skipping: {name}', xbmc.LOGDEBUG)
+            xbmc.log(f'[Madnox] Repo already present, skipping: {name}', xbmc.LOGDEBUG)
             continue
 
         source_el = ET.SubElement(files_node, 'source')
-        ET.SubElement(source_el, 'n').text           = name
+        ET.SubElement(source_el, 'n').text            = name
         path_el = ET.SubElement(source_el, 'path')
-        path_el.text                                  = url
+        path_el.text                                   = url
         path_el.set('pathversion', '1')
-        ET.SubElement(source_el, 'allowsharing').text = 'true'
+        ET.SubElement(source_el, 'allowsharing').text  = 'true'
 
         xbmc.log(f'[Madnox] Injected repo source: {name}', xbmc.LOGINFO)
         injected += 1
 
     if injected == 0:
-        return True  # Nothing to write, already good
+        return True
 
-    # --- Write back ---
-    ET.indent(root, space='    ')  # Python 3.9+ / Kodi 21+; safe to remove if needed
-    xml_str = ET.tostring(root, encoding='unicode', xml_declaration=False)
+    ET.indent(root, space='    ')
+    xml_str = ET.tostring(root, encoding='unicode')
     xml_out = '<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n' + xml_str
 
     try:
