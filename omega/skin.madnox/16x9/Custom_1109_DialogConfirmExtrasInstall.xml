@@ -31,7 +31,7 @@
 				<width>820</width>
 				<height>50</height>
 				<font>Font28_Bold</font>
-				<label>[COLOR yellow]Optional Extras Installer[/COLOR]</label>
+				<label>[COLOR FFEEEE9B]$LOCALIZE[31519][/COLOR]</label>
 			</control>
 
 			<control type="textbox" id="2">
@@ -41,7 +41,7 @@
 				<height>180</height>
 				<font>Font28_Reg</font>
 				<align>center</align>
-				<label>This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons.</label>
+				<label>$LOCALIZE[31520]</label>
 			</control>
 
 			<control type="grouplist" id="9000">
@@ -58,7 +58,7 @@
 					<onright>9501</onright>
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>Yes, install extras</label>
+					<label>$LOCALIZE[107], [LOWERCASE]$LOCALIZE[24038] $LOCALIZE[40211][/LOWERCASE]</label>
 					<align>center</align>
 					<onclick>Close</onclick>
 					<onclick>Skin.SetBoolSetting(Madnox.ExtrasInstalled)</onclick>

@@ -175,7 +175,7 @@
 	<setting id="shortcutdisablesearch" type="bool">false</setting>
 	<setting id="view51biglist" type="bool">false</setting>
 	<setting id="disableviewlow" type="bool">false</setting>
-	<setting id="view50animatedfanart" type="bool">true</setting>
+	<setting id="view50animatedfanart" type="bool">false</setting>
 	<setting id="tmdbhelper.disableextendedproperties" type="bool">false</setting>
 	<setting id="view530hidefloor" type="bool">false</setting>
 	<setting id="disableviewlandscapeicon" type="bool">false</setting>
@@ -525,7 +525,7 @@
 	<setting id="view501infodelay" type="string" />
 	<setting id="picturesbackground" type="string" />
 	<setting id="Wikipedia.Format.Superscript" type="string" />
-	<setting id="fanarttimeperimage" type="string">7</setting>
+	<setting id="fanarttimeperimage" type="string">8</setting>
 	<setting id="view533art" type="string">clearlogo</setting>
 	<setting id="MusicOSD.dim" type="string" />
 	<setting id="trailersource" type="string" />
@@ -588,10 +588,10 @@
 	<setting id="musicfanartbackgroundgroupvarvalue" type="string">scale</setting>
 	<setting id="nowplayingmusicbackground" type="string" />
 	<setting id="WeatherFanart.path" type="string">resource://resource.images.weatherfanart.multi/</setting>
-	<setting id="mycolorfile" type="string">special://skin/extras/colors/madnox-(24-colors).xml</setting>
+	<setting id="mycolorfile" type="string">special://home/addons/resource.images.skin.madnox/resources/colors/madnox-(24-colors).xml</setting>
 	<setting id="view509info" type="string" />
 	<setting id="moviemetascrollingdelayvaluevara" type="string">7</setting>
-	<setting id="skinshortcuts-sharedmenu" type="string">true</setting>
+	<setting id="skinshortcuts-sharedmenu" type="string">false</setting>
 	<setting id="view543art" type="string" />
 	<setting id="backgroundshadow.color" type="string" />
 	<setting id="Wikipedia.Format.Emphasis" type="string" />
@@ -634,7 +634,7 @@
     <setting id="musicblurwithcolor" type="bool">false</setting>
     <setting id="previousblurcolorbackup" type="string"></setting>
     <setting id="skinshortcuts-background-special://skin/extras/backgrounds/favourites.jpg" type="bool">true</setting>
-    <setting id="videoblurwithcolor" type="bool"></setting>
+    <setting id="videoblurwithcolor" type="bool">false</setting>
     <setting id="widgetshowprogress" type="bool">true</setting>
     <setting id="wikisection.color" type="string"></setting>
     <setting id="gamesanimatedfanart" type="bool">false</setting>
@@ -645,4 +645,54 @@
     <setting id="BlurRadius" type="string"></setting>
     <setting id="BlurSaturation" type="string"></setting>
     <setting id="blurplayericon" type="bool">false</setting>
+    <setting id="disableeditmainmenubutton" type="bool">false</setting>
+    <setting id="disableexitbutton" type="bool">false</setting>
+    <setting id="disablefavoritesbutton" type="bool">false</setting>
+    <setting id="disablehibernatebutton" type="bool">false</setting>
+    <setting id="disablepowerdownbutton" type="bool">false</setting>
+    <setting id="disablerebootbutton" type="bool">false</setting>
+    <setting id="disablesettingsbutton" type="bool">false</setting>
+    <setting id="disableshutdowntimerbutton" type="bool">false</setting>
+    <setting id="disableskinfavoritesbutton" type="bool">false</setting>
+    <setting id="disablesuspendbutton" type="bool">false</setting>
+    <setting id="skinshortcuts-background-$INFO[Skin.String(WeatherFanart.path)]$INFO[Weather.fanartcode]$INFO[Skin.String(WeatherFanart.ext)]" type="bool">false</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/addons.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/favourites.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/games.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/music.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/musicvideos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/pictures.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/radio.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/system.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/tv.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/tvshows.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/videos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/backgrounds/weather.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/addons.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/favourites.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/games.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/music.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/musicvideos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/pictures.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/radio.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/system.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/tv.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/tvshows.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/videos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/resource.images.skin.madnox/resources/extras/backgrounds/weather.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/addons.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/favourites.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/games.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/movies.jpg" type="bool">false</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/music.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/musicvideos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/pictures.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/radio.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/system.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/tv.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/tvshows.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/videos.jpg" type="bool">true</setting>
+    <setting id="skinshortcuts-background-special://home/addons/script.skin.madnox/resources/extras/backgrounds/weather.jpg" type="bool">true</setting>
+    <setting id="view50epgchannelnumber" type="bool">false</setting>
+    <setting id="view50epgdisableicons" type="bool">false</setting>
 </settings>

@@ -495,7 +495,7 @@ v0.4.0 (2025-03-23)
 
 			** General All **
 			-2/16/2026 Madnox now has its own dedicated skin helper to consolidate all scripts and satisfy Kodi's requirements of free running scripts
-            -2/16/2026 1st run will write all required settings (version controlled) for added dev work without prompting preventing odd behavior until restart &amp; continued use to initialize missing settings
+            		-2/16/2026 1st run will write all required settings (version controlled) for added dev work without prompting preventing odd behavior until restart &amp; continued use to initialize missing settings
 			-Multiple issues resolved (syntax, spelling, missing calls)
 			-Removed startup script causing forced icon view overriding all user selection (Dev leftover)
 			-Comprehensive removal of as many hardcoded strings into localization and all files fully translated

@@ -2608,6 +2608,21 @@ msgctxt "#31517"
 msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
 msgstr "Показує або приховує пункт меню в головному контекстному меню (S на клавіатурі). ПРИМІТКА. Цей пункт меню відображається ЛИШЕ на головному екрані незалежно від цього налаштування."
 
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "Повторно запустіть інсталятор додаткових додаткових функцій"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "Інсталятор додаткових опцій"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "Це призведе до повторного запуску інсталятора додаткових функцій. Усі додаткові компоненти будуть завантажені та встановлені у вимкненому стані. Увімкніть лише те, що вам потрібно, у меню «Налаштування» > «Параметри оформлення» > «Додатки»."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."

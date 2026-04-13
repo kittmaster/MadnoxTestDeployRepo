@@ -1214,19 +1214,19 @@
 							<include>SettingsLabel</include>
 						</control>
 						<control type="button" id="540">
-							<label>[COLOR red]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]...[/COLOR]</label>
+							<label>[COLOR FFCC4444]$LOCALIZE[13007] [LOWERCASE]$LOCALIZE[593] $LOCALIZE[166] $LOCALIZE[5][/LOWERCASE]...[/COLOR]</label>
 							<onclick>ActivateWindow(1107)</onclick>
 							<include>SettingsButton</include>
 						</control>
 						<control type="button" id="554">
-							<label>[COLOR yellow]Re-run Optional Extras Installer[/COLOR]</label>
+							<label>[COLOR FFEEEE9B]$LOCALIZE[31518][/COLOR]</label>
 							<onclick>ActivateWindow(1109)</onclick>
 							<include>SettingsButton</include>
-						</control>						
+						</control>
 						<control type="button" id="542">
 							<label>Madnox [LOWERCASE]$LOCALIZE[20331] $LOCALIZE[24069][/LOWERCASE]</label>
 							<!-- <label2>$VAR[MadnoxBackupFileVersionLabel2Var]</label2> -->
-							<label2>Skin: v$INFO[System.AddonVersion(skin.madnox)] | Helper: v$INFO[System.AddonVersion(script.skin.madnox)]</label2>
+							<label2>$LOCALIZE[166]: v$INFO[System.AddonVersion(skin.madnox)] | $LOCALIZE[409]: v$INFO[System.AddonVersion(script.skin.madnox)]</label2>
 							<include>SettingsButton</include>
 						</control>
 						<control type="label" id="520">

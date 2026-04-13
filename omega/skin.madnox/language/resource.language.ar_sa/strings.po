@@ -2610,6 +2610,21 @@ msgctxt "#31517"
 msgid "Displays or hides the menu item in the main context menu (S on the keyboard). NOTE: This menu item is visible ONLY on the home screen only regardless of this setting."
 msgstr "يعرض أو يخفي عنصر القائمة في قائمة السياق الرئيسية (S على لوحة المفاتيح). ملاحظة: عنصر القائمة هذا مرئي فقط على الشاشة الرئيسية بغض النظر عن هذا الإعداد."
 
+#: SkinSettings.xml
+msgctxt "#31518"
+msgid "Re-run optional extras installer"
+msgstr "أعد تشغيل مثبت الإضافات الاختيارية"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31519"
+msgid "Optional extras installer"
+msgstr "مثبت الإضافات الاختيارية"
+
+#: Custom_1109_DialogConfirmExtrasInstall.xml
+msgctxt "#31520"
+msgid "This will re-run the optional extras installer. All extras will be downloaded and installed in a disabled state. Enable only what you need in Settings > Skin Settings > Addons."
+msgstr "سيؤدي هذا إلى إعادة تشغيل مثبت الإضافات الاختياري. سيتم تنزيل جميع الإضافات وتثبيتها في حالة تعطيل. قم بتمكين ما تحتاجه فقط في الإعدادات > إعدادات الجلد > الوظائف الإضافية."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
