@@ -1,33 +1,41 @@
 import xbmc
 import xbmcgui
 import xbmcaddon
+import xbmcvfs
 import json
+import xml.etree.ElementTree as ET
 
 ADDON = xbmcaddon.Addon('script.skin.madnox')
 
+REPO_SOURCES = [
+    ('lynxstrike.repo',          'https://lynxstrike.github.io/lynxstrike.repo/'),
+    ('repository.jurialmunkey',  'https://jurialmunkey.github.io/repository.jurialmunkey/'),
+]
+
 # (addon_id, friendly_label)
 OPTIONAL_EXTRAS = [
-    ('script.cu.lrclyrics',                                 'LRC Lyrics'),
-    ('service.upnext',                                      'Up Next'),
-    ('script.artistslideshow',                              'Artist Slideshow'),
-    ('script.rss.editor',                                   'RSS Editor'),
-    ('plugin.library.node.editor',                          'Library Node Editor'),
-    ('resource.images.weathericons.3d-coloured',            'Weather Icons (3D)'),
-    ('resource.images.weatherfanart.multi',                 'Weather Fanart'),
-    ('resource.images.studios.white',                       'Studio Icons (White)'),
-    ('resource.images.studios.coloured',                    'Studio Icons (Colour)'),
-    ('resource.images.recordlabels.white',                  'Record Labels'),
-    ('resource.images.languageflags.rounded',               'Language Flags'),
-    ('resource.images.musicgenreicons.text',                'Music Genre Icons'),
-    ('resource.images.moviecountryicons.flags',             'Country Icons'),
-    ('script.artwork.dump',                                 'Artwork Dump'),
-    ('service.tvtunes',                                     'TV Tunes'),
-    ('script.wikipedia',                                    'Wikipedia'),
-    ('script.preshowexperience',                            'Preshow Experience'),
-    ('resource.images.moviegenreicons.filmstrip-hd.bw',     'Movie Genre Icons (B&W)'),
-    ('resource.images.moviegenreicons.filmstrip-hd.colour', 'Movie Genre Icons (Colour)'),
-    ('script.trakt',                                        'Trakt'),
+    ('script.cu.lrclyrics',                              'LRC Lyrics'),
+    ('service.upnext',                                   'Up Next'),
+    ('script.artistslideshow',                           'Artist Slideshow'),
+    ('script.rss.editor',                                'RSS Editor'),
+    ('plugin.library.node.editor',                       'Library Node Editor'),
+    ('resource.images.weathericons.3d-coloured',         'Weather Icons (3D)'),
+    ('resource.images.weatherfanart.multi',              'Weather Fanart'),
+    ('resource.images.studios.white',                    'Studio Icons (White)'),
+    ('resource.images.studios.coloured',                 'Studio Icons (Colour)'),
+    ('resource.images.recordlabels.white',               'Record Labels'),
+    ('resource.images.languageflags.rounded',            'Language Flags'),
+    ('resource.images.musicgenreicons.text',             'Music Genre Icons'),
+    ('resource.images.moviecountryicons.flags',          'Country Icons'),
+    ('script.artwork.dump',                              'Artwork Dump'),
+    ('service.tvtunes',                                  'TV Tunes'),
+    ('script.wikipedia',                                 'Wikipedia'),
+    ('script.preshowexperience',                         'Preshow Experience'),
+    ('resource.images.moviegenreicons.filmstrip-hd.bw',      'Movie Genre Icons (B&W)'),
+    ('resource.images.moviegenreicons.filmstrip-hd.colour',  'Movie Genre Icons (Colour)'),
+    ('script.trakt',                                     'Trakt'),
 ]
+
 
 def _set_addon_enabled(addon_id, enabled):
     xbmc.executeJSONRPC(json.dumps({
@@ -37,8 +45,82 @@ def _set_addon_enabled(addon_id, enabled):
         "id": 1
     }))
 
+
+def _inject_repo_sources():
+    """
+    Reads sources.xml and injects any missing repo entries into <files>.
+    Uses special://userdata/ so it works in portable and standard installs alike.
+    Returns True if the file was modified (or already correct), False on error.
+    """
+    sources_path = 'special://userdata/sources.xml'
+    translated   = xbmcvfs.translatePath(sources_path)
+
+    # --- Read ---
+    try:
+        with xbmcvfs.File(sources_path, 'r') as fh:
+            raw = fh.read()
+        if not raw:
+            xbmc.log('[Madnox] sources.xml is empty or unreadable', xbmc.LOGWARNING)
+            return False
+    except Exception as exc:
+        xbmc.log(f'[Madnox] Could not read sources.xml: {exc}', xbmc.LOGERROR)
+        return False
+
+    # --- Parse ---
+    try:
+        tree = ET.ElementTree(ET.fromstring(raw))
+        root = tree.getroot()
+    except ET.ParseError as exc:
+        xbmc.log(f'[Madnox] sources.xml parse error: {exc}', xbmc.LOGERROR)
+        return False
+
+    # Locate or create <files> section
+    files_node = root.find('files')
+    if files_node is None:
+        files_node = ET.SubElement(root, 'files')
+        ET.SubElement(files_node, 'default').set('pathversion', '1')
+
+    # Collect existing paths so we don't duplicate
+    existing_paths = {
+        src.findtext('path', '').rstrip('/')
+        for src in files_node.findall('source')
+    }
+
+    injected = 0
+    for name, url in REPO_SOURCES:
+        if url.rstrip('/') in existing_paths:
+            xbmc.log(f'[Madnox] Repo already in sources.xml, skipping: {name}', xbmc.LOGDEBUG)
+            continue
+
+        source_el = ET.SubElement(files_node, 'source')
+        ET.SubElement(source_el, 'n').text           = name
+        path_el = ET.SubElement(source_el, 'path')
+        path_el.text                                  = url
+        path_el.set('pathversion', '1')
+        ET.SubElement(source_el, 'allowsharing').text = 'true'
+
+        xbmc.log(f'[Madnox] Injected repo source: {name}', xbmc.LOGINFO)
+        injected += 1
+
+    if injected == 0:
+        return True  # Nothing to write, already good
+
+    # --- Write back ---
+    ET.indent(root, space='    ')  # Python 3.9+ / Kodi 21+; safe to remove if needed
+    xml_str = ET.tostring(root, encoding='unicode', xml_declaration=False)
+    xml_out = '<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n' + xml_str
+
+    try:
+        with xbmcvfs.File(sources_path, 'w') as fh:
+            fh.write(xml_out)
+        xbmc.log(f'[Madnox] sources.xml updated with {injected} new repo(s)', xbmc.LOGINFO)
+        return True
+    except Exception as exc:
+        xbmc.log(f'[Madnox] Could not write sources.xml: {exc}', xbmc.LOGERROR)
+        return False
+
+
 def run():
-    # Delay for 2 seconds to let the Home Screen fully build and settle.
     xbmc.sleep(2000)
 
     dialog = xbmcgui.Dialog()
@@ -48,10 +130,13 @@ def run():
         'Download optional extras in the background?\n\n'
         '[B]Flags, studio icons, genre art, lyrics, TV tunes[/B] and more.\n\n'
         'Everything installs [B]disabled[/B] — enable only what you want\n'
-        'in [I]Settings > Skin Settings > Addons[/I].'
+        'in [I]Settings › Addons › My Addons[/I].'
     ):
         xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
         return
+
+    # Inject repos before attempting any installs
+    _inject_repo_sources()
 
     progress = xbmcgui.DialogProgress()
     progress.create('Madnox Setup', 'Preparing optional extras...')
@@ -62,40 +147,34 @@ def run():
             break
 
         pct = int((i / total) * 100)
-        progress.update(pct, f'Wait For Closing Dialog - Installing: [B]{label}[/B]')
+        progress.update(pct, f'Installing: [B]{label}[/B]')
 
         if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
             continue
 
         xbmc.executebuiltin(f'InstallAddon({addon_id})', False)
 
-        # Polling Loop
         elapsed = 0
         timeout_ms = 45000
-        
+
         while elapsed < timeout_ms:
             if progress.iscanceled():
                 break
-                
+
             if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
                 break
-            
-            # --- THE BYPASS (FIXED) ---
-            # We MUST use string names (dialogconfirm, yesnodialog) for visibility checks.
-            # 1301 is DialogConfirm, 1300 is DialogYesNo
-            # Button 11 is Kodi's standard ID for the "Yes" button
+
             if xbmc.getCondVisibility('Window.IsActive(dialogconfirm)'):
                 xbmc.executebuiltin('SendClick(1301, 11)')
-            
+
             if xbmc.getCondVisibility('Window.IsActive(yesnodialog)'):
                 xbmc.executebuiltin('SendClick(1300, 11)')
 
             xbmc.sleep(250)
             elapsed += 250
 
-        # Wait an extra second for Kodi's internal database to settle before disabling
         xbmc.sleep(1000)
-        
+
         if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
             _set_addon_enabled(addon_id, False)
 
@@ -108,5 +187,5 @@ def run():
     dialog.ok(
         'Madnox Setup',
         'Optional extras installed and [B]disabled[/B].\n\n'
-        'Enable what you want in [I]Settings > Skin Settings > Addons[/I].'
+        'Enable what you want in [I]Settings › Addons › My Addons[/I].'
     )
