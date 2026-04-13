@@ -55,8 +55,11 @@ def _indent_xml(elem, level=0):
             elem.tail = i
         for child in elem:
             _indent_xml(child, level + 1)
-        if not child.tail or not child.tail.strip():
-            child.tail = i
+        
+        # Explicitly target the last child to satisfy linters/type-checkers
+        last_child = elem[-1]
+        if not last_child.tail or not last_child.tail.strip():
+            last_child.tail = i
     else:
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
@@ -64,34 +67,37 @@ def _indent_xml(elem, level=0):
 
 def _inject_repo_sources():
     sources_path = 'special://userdata/sources.xml'
+    raw = ""
 
+    # 1. Safely read the file if it exists
     try:
-        with xbmcvfs.File(sources_path, 'r') as fh:
-            raw = fh.read()
-        if not raw:
-            xbmc.log('[Madnox] sources.xml is empty or unreadable', xbmc.LOGWARNING)
-            return False
+        if xbmcvfs.exists(sources_path):
+            with xbmcvfs.File(sources_path, 'r') as fh:
+                raw = fh.read()
     except Exception as exc:
         xbmc.log(f'[Madnox] Could not read sources.xml: {exc}', xbmc.LOGERROR)
         return False
 
-    try:
-        root = ET.fromstring(raw)
-        if root is None:
-            xbmc.log('[Madnox] sources.xml parsed to None', xbmc.LOGERROR)
+    # 2. Parse existing XML or create a new root if the file is empty/missing
+    if not raw or not raw.strip():
+        root = ET.Element('sources')
+    else:
+        try:
+            root = ET.fromstring(raw)
+            if root is None:
+                return False
+        except ET.ParseError as exc:
+            xbmc.log(f'[Madnox] sources.xml parse error: {exc}', xbmc.LOGERROR)
             return False
-    except ET.ParseError as exc:
-        xbmc.log(f'[Madnox] sources.xml parse error: {exc}', xbmc.LOGERROR)
-        return False
 
+    # 3. Ensure the <files> node exists
     files_node = root.find('files')
     if files_node is None:
         files_node = ET.SubElement(root, 'files')
         default_el = ET.SubElement(files_node, 'default')
         default_el.set('pathversion', '1')
 
-    assert files_node is not None  # narrow type for Pylance
-
+    # 4. Check for existing paths to avoid duplicates
     existing_paths = {
         src.findtext('path', '').rstrip('/')
         for src in files_node.findall('source')
@@ -103,8 +109,9 @@ def _inject_repo_sources():
             xbmc.log(f'[Madnox] Repo already present, skipping: {name}', xbmc.LOGDEBUG)
             continue
 
+        # Add the new source block
         source_el = ET.SubElement(files_node, 'source')
-        ET.SubElement(source_el, 'n').text            = name
+        ET.SubElement(source_el, 'name').text          = name
         path_el = ET.SubElement(source_el, 'path')
         path_el.text                                   = url
         path_el.set('pathversion', '1')
@@ -113,9 +120,11 @@ def _inject_repo_sources():
         xbmc.log(f'[Madnox] Injected repo source: {name}', xbmc.LOGINFO)
         injected += 1
 
+    # If nothing was added, we can stop here
     if injected == 0:
         return True
 
+    # 5. Format and write the file
     # Use native indent if available (Python 3.9+), otherwise fallback
     if hasattr(ET, 'indent'):
         ET.indent(root, space='    ')
