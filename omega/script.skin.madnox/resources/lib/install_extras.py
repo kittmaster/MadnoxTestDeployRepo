@@ -56,7 +56,6 @@ def _indent_xml(elem, level=0):
         for child in elem:
             _indent_xml(child, level + 1)
         
-        # Explicitly target the last child to satisfy linters/type-checkers
         last_child = elem[-1]
         if not last_child.tail or not last_child.tail.strip():
             last_child.tail = i
@@ -66,38 +65,35 @@ def _indent_xml(elem, level=0):
 
 
 def _inject_repo_sources():
+    """Returns the number of sources successfully injected."""
     sources_path = 'special://userdata/sources.xml'
     raw = ""
 
-    # 1. Safely read the file if it exists
     try:
         if xbmcvfs.exists(sources_path):
             with xbmcvfs.File(sources_path, 'r') as fh:
                 raw = fh.read()
     except Exception as exc:
         xbmc.log(f'[Madnox] Could not read sources.xml: {exc}', xbmc.LOGERROR)
-        return False
+        return 0
 
-    # 2. Parse existing XML or create a new root if the file is empty/missing
     if not raw or not raw.strip():
         root = ET.Element('sources')
     else:
         try:
             root = ET.fromstring(raw)
             if root is None:
-                return False
+                return 0
         except ET.ParseError as exc:
             xbmc.log(f'[Madnox] sources.xml parse error: {exc}', xbmc.LOGERROR)
-            return False
+            return 0
 
-    # 3. Ensure the <files> node exists
     files_node = root.find('files')
     if files_node is None:
         files_node = ET.SubElement(root, 'files')
         default_el = ET.SubElement(files_node, 'default')
         default_el.set('pathversion', '1')
 
-    # 4. Check for existing paths to avoid duplicates
     existing_paths = {
         src.findtext('path', '').rstrip('/')
         for src in files_node.findall('source')
@@ -109,7 +105,6 @@ def _inject_repo_sources():
             xbmc.log(f'[Madnox] Repo already present, skipping: {name}', xbmc.LOGDEBUG)
             continue
 
-        # Add the new source block
         source_el = ET.SubElement(files_node, 'source')
         ET.SubElement(source_el, 'name').text          = name
         path_el = ET.SubElement(source_el, 'path')
@@ -120,12 +115,9 @@ def _inject_repo_sources():
         xbmc.log(f'[Madnox] Injected repo source: {name}', xbmc.LOGINFO)
         injected += 1
 
-    # If nothing was added, we can stop here
     if injected == 0:
-        return True
+        return 0
 
-    # 5. Format and write the file
-    # Use native indent if available (Python 3.9+), otherwise fallback
     if hasattr(ET, 'indent'):
         ET.indent(root, space='    ')
     else:
@@ -138,10 +130,10 @@ def _inject_repo_sources():
         with xbmcvfs.File(sources_path, 'w') as fh:
             fh.write(xml_out)
         xbmc.log(f'[Madnox] sources.xml updated with {injected} new repo(s)', xbmc.LOGINFO)
-        return True
+        return injected
     except Exception as exc:
         xbmc.log(f'[Madnox] Could not write sources.xml: {exc}', xbmc.LOGERROR)
-        return False
+        return 0
 
 
 def run():
@@ -159,8 +151,8 @@ def run():
         xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
         return
 
-    # Inject repos before attempting any installs
-    _inject_repo_sources()
+    # Inject repos and capture how many were added
+    injected_count = _inject_repo_sources()
 
     progress = xbmcgui.DialogProgress()
     progress.create('Madnox Setup', 'Preparing optional extras...')
@@ -171,7 +163,11 @@ def run():
             break
 
         pct = int((i / total) * 100)
-        progress.update(pct, f'Installing: [B]{label}[/B]')
+        current_num = i + 1
+        
+        # Display multiline text on the progress bar
+        status_text = f'Installing {current_num} of {total}\n[B]{label}[/B]'
+        progress.update(pct, status_text)
 
         if xbmc.getCondVisibility(f'System.HasAddon({addon_id})'):
             continue
@@ -208,8 +204,20 @@ def run():
 
     xbmc.executebuiltin('Skin.SetBool(madnox.extrasinstalled)')
 
-    dialog.ok(
-        'Madnox Setup',
-        'Optional extras installed and [B]disabled[/B].\n\n'
-        'Enable what you want in [I]Settings › Addons › My Addons[/I].'
-    )
+    # Check if we need to offer a full application close
+    if injected_count > 0:
+        do_close = dialog.yesno(
+            'Madnox Setup',
+            'Optional extras installed and [B]disabled[/B].\n'
+            'Enable what you want in [I]Settings › Addons › My Addons[/I].\n\n'
+            '[COLOR yellow]Kodi must be restarted to show the new Repos in the File Manager.[/COLOR]\n\n'
+            'Close Kodi now?'
+        )
+        if do_close:
+            xbmc.executebuiltin('Quit')
+    else:
+        dialog.ok(
+            'Madnox Setup',
+            'Optional extras installed and [B]disabled[/B].\n\n'
+            'Enable what you want in [I]Settings › Addons › My Addons[/I].'
+        )
