@@ -912,7 +912,8 @@
 				<include content="AnimationSlideBottomWindow">
 					<param name="slide">540</param>
 				</include>
-				<animation effect="fade" start="100" end="0" time="480" condition="[!Skin.HasSetting(NowplayingHomeDisable) + Player.HasAudio + !ControlGroup(90010).HasFocus] | [Player.HasVideo + !Skin.HasSetting(NowplayingHomeDisable) + !ControlGroup(90010).HasFocus] | [Skin.HasSetting(WidgetHide) + !ControlGroup(90010).HasFocus]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-390" time="300" easing="out" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">Conditional</animation>
+				<!-- <animation effect="fade" start="100" end="0" time="480" condition="[!Skin.HasSetting(NowplayingHomeDisable) + Player.HasAudio + !ControlGroup(90010).HasFocus] | [Player.HasVideo + !Skin.HasSetting(NowplayingHomeDisable) + !ControlGroup(90010).HasFocus] | [Skin.HasSetting(WidgetHide) + !ControlGroup(90010).HasFocus]">Conditional</animation> -->
 				<include>skinshortcuts-template-widget1</include>
 				<include>skinshortcuts-template-widget2</include>
 				<include>skinshortcuts-template-widget3</include>
@@ -1043,6 +1044,7 @@
 
 			<control type="grouplist" id="9900">
 				<visible>Skin.HasSetting(SystemWidget.GridMode) + !Skin.HasSetting(widgethide)</visible>
+				<animation effect="slide" start="0,0" end="0,-390" time="300" easing="out" tween="sine" condition="Player.HasMedia + !Skin.HasSetting(NowplayingHomeDisable)">Conditional</animation>
 				<include content="AnimationSlideBottomWindow">
 					<param name="slide">540</param>
 				</include>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<window type="dialog" id="1131">
+	<!--
+		Navigation model (proven Kodi pattern for read-only scrolling text):
+
+		  defaultcontrol → OK button (10) — the ONLY button-type control.
+		  Kodi requires a focusable child as defaultcontrol.  grouplist with
+		  only a textbox inside produces a null focus on open (keypresses fire
+		  into a void — confirmed in log: actions arrive but nothing responds).
+
+		  Scrolling is handled by the textbox's own built-in scroll engine via
+		  its pagecontrol link to scrollbar (60).  The scrollbar receives UP/DOWN
+		  from the OK button's onup, making the scrollbar the keyboard-scroll
+		  proxy.  Mouse wheel on the textbox area works independently through
+		  Kodi's mouse handler.
+
+		  Focus chain:
+		    [open] → OK button (10)
+		    OK onup → scrollbar (60)   <- scrollbar accepts UP/DOWN to page text
+		    scrollbar ondown → OK button (10)
+		    OK onclick → Close
+	-->
+	<defaultcontrol always="true">10</defaultcontrol>
+
+	<onunload>ClearProperty(TextViewer_Header,home)</onunload>
+	<onunload>ClearProperty(TextViewer_Text,home)</onunload>
+
+	<controls>
+		<!-- Background tint -->
+		<control type="image">
+			<texture colordiffuse="E6FFFFFF">colors/black50.png</texture>
+		</control>
+
+		<!-- Main Dialog Box -->
+		<control type="group">
+			<width>1500</width>
+			<height>800</height>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+
+			<include content="DialogBackground">
+				<param name="width" value="1500" />
+				<param name="height" value="800" />
+			</include>
+
+			<!-- Logo -->
+			<control type="image">
+				<right>40</right>
+				<top>30</top>
+				<width>120</width>
+				<height>60</height>
+				<aspectratio>keep</aspectratio>
+				<texture>icons/logo.png</texture>
+			</control>
+
+			<!-- Header label (single line, passive) -->
+			<control type="label" id="1">
+				<left>40</left>
+				<top>40</top>
+				<width>960</width>
+				<height>50</height>
+				<font>Font28_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$LOCALIZE[24054] $LOCALIZE[1405] $INFO[ListItem.AddonName]$INFO[ListItem.AddonVersion, : v]</label>
+			</control>
+
+			<!--
+				Scrollable text body - textbox at window level (NOT inside a grouplist).
+				pagecontrol="60" links it to the scrollbar so the scrollbar thumb
+				tracks the text position and the scrollbar's UP/DOWN actions page
+				through the text.
+				Width is pulled in from the right to leave clear room for the scrollbar.
+			-->
+			<control type="textbox" id="2">
+				<left>40</left>
+				<top>100</top>
+				<width>1400</width>
+				<height>580</height>
+				<font>Font28_Reg</font>
+				<label>$INFO[Window(home).Property(TextViewer_Text)]</label>
+				<autoscroll>false</autoscroll>
+				<pagecontrol>60</pagecontrol>
+			</control>
+
+			<!--
+				Scrollbar - linked to the textbox via pagecontrol on the textbox.
+				This is also the keyboard-scroll proxy: OK button navigates UP to
+				here, and UP/DOWN on the scrollbar pages through the text.
+				ondown / onleft / onright all return focus to the OK button.
+			-->
+			<control type="scrollbar" id="60">
+				<right>20</right>
+				<top>100</top>
+				<width>30</width>
+				<height>580</height>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+				<ondown>10</ondown>
+				<onleft>10</onleft>
+				<onright>10</onright>
+			</control>
+
+			<!--
+				OK / Close button - the ONLY focusable (button-type) control.
+				This is the defaultcontrol so focus always lands here on open.
+				onup goes to the scrollbar so the user can page through the text
+				with UP/DOWN after navigating there once.
+				onleft/onright are self-referencing (no other buttons).
+			-->
+			<control type="grouplist" id="9131">
+				<left>40</left>
+				<top>700</top>
+				<width>1420</width>
+				<height>80</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+
+				<control type="button" id="10">
+					<width>350</width>
+					<include>DialogButtonAlwaysFocused</include>
+					<label>$LOCALIZE[186]</label>
+					<align>center</align>
+					<onclick>Close</onclick>
+					<onup>60</onup>
+					<onleft>10</onleft>
+					<onright>10</onright>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

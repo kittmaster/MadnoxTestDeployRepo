@@ -49,7 +49,7 @@
 				<height>800</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 				<onleft>9050</onleft>
-				<onunfocus>PlayerControl(Stop)</onunfocus>
+				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onright>6053</onright>
 				<pagecontrol>6053</pagecontrol>
 				<include>ContainerScrollTime</include>
@@ -64,12 +64,21 @@
 					<param name="biglistvisible">Skin.HasSetting(View53BigList)</param>
 				</include>
 			</control>
-			<control type="scrollbar" id="6053">
+			<!-- <control type="scrollbar" id="6053">
 				<top>140</top>
 				<left>1072</left>
 				<bottom>140</bottom>
 				<onleft>53</onleft>
 				<onright>60531</onright>
+			</control> -->
+			<control type="scrollbar" id="6053">
+				<top>140</top>
+				<left>1072</left>
+				<bottom>140</bottom>
+				<onleft>53</onleft>
+				<onright condition="Control.IsVisible(60531)">60531</onright>
+				<onright condition="!Control.IsVisible(60531) + Control.IsVisible(61300)">61300</onright>
+				<onright condition="!Control.IsVisible(60531) + Control.IsVisible(61301)">61301</onright>
 			</control>
 		</control>
 		<!-- Media flags Fix overlapping icons when Movie & TV Show is linked -->
@@ -100,6 +109,5 @@
 				<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsVideos5</include>
 			</control>
 		</control>
-
 	</include>
 </includes>
