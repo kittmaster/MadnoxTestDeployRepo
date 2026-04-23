@@ -2,23 +2,6 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
-	<!-- script.skin.madnox -->
-	<onload condition="!System.AddonIsEnabled(script.skin.madnox)">EnableAddon(script.skin.madnox)</onload>
-	<onload condition="!System.HasAddon(script.skin.madnox)">InstallAddon(script.skin.madnox)</onload>
-	<!-- script.skinshortcuts -->
-	<onload condition="!System.AddonIsEnabled(script.skinshortcuts)">EnableAddon(script.skinshortcuts)</onload>
-	<onload condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onload>
-	<!-- script.image.resource.select -->
-	<onload condition="!System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onload>
-	<onload condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onload>
-	<!-- script.skinvariables -->
-	<onload condition="!System.AddonIsEnabled(script.skinvariables)">EnableAddon(script.skinvariables)</onload>
-	<onload condition="!System.HasAddon(script.skinvariables)">InstallAddon(script.skinvariables)</onload>
-	<!-- plugin.video.themoviedb.helper -->
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">EnableAddon(plugin.video.themoviedb.helper)</onload>
-	<onload condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onload>
-	<!-- <onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(special://home/addons/skin.madnox/extras/scripts/tmdb_installed_validation.py)</onload> -->
-	<onload condition="!System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(script.skin.madnox, action=validate_tmdb_helper)</onload>
 
 	<!-- Optional extras: Ask only after the skin has fully initialized via template -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
