@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <window id="1101" type="window">
 	<!-- ================================================================= -->
-	<!-- 1. FIRST RUN INITIALIZATION (MOVED TO HOME.XML FOR STABILITY) -->
+	<!-- TMDb Helper skin settings (fires on every boot once initialized)  -->
 	<!-- ================================================================= -->
-	<!-- <onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">RunScript(script.skin.madnox, action=apply_template)</onload> -->
-
-	<!-- ================================================================= -->
-	<!-- 2. NORMAL BOOT (MOVED TO HOME.XML FOR STABILITY) -->
-	<!-- ================================================================= -->
-	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload> -->
-
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !IsEmpty(Skin.String(TMDbHelper.MonitorContainer))">Skin.Reset(TMDBHelper.MonitorContainer)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + [!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)]">Skin.Reset(TMDbHelper.EnableBlur)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
+	<!-- ================================================================= -->
+	<!-- Intro Video Logic                                                  -->
+	<!-- ================================================================= -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
 
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
@@ -25,32 +24,11 @@
 	<animation effect="fade" time="480">WindowClose</animation>
 	<include>onunload_SkinSettings</include>
 
-	<!-- === Intro Video Logic (Only if Initialized) === -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
-	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload> -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
-
 	<controls>
-		<!-- ========================================================= -->
-		<!-- ESCAPE HATCH FOR FAILED ROUTING (Fix for Piers Alpha)     -->
-		<!-- If this window is still open after 1.5s, force it out.  -->
-		<!-- ========================================================= -->
+		<!-- Escape hatch: if routing stalls for any reason, force out after 1.5s -->
 		<control type="image">
 			<include>HiddenObject</include>
 			<animation effect="fade" start="100" end="100" time="1" delay="1500" onend="ReplaceWindow(1103)" condition="Window.IsVisible(1101)">WindowOpen</animation>
-		</control>
-
-		<!-- VISUAL TRACER LABEL (You can remove this now if you want) -->
-		<control type="label">
-			<left>0</left>
-			<top>400</top>
-			<width>1920</width>
-			<height>200</height>
-			<align>center</align>
-			<textcolor>FFFF0000</textcolor>
-			<!-- Bright Red -->
-			<label>I AM WINDOW 1101 - INTRO ROUTER</label>
 		</control>
 
 		<control type="button" id="10">
