@@ -4,29 +4,37 @@
 	<menucontrol>9050</menucontrol>
 
 	<!-- =============================================================== -->
+	<!-- BOOT ROUTING — fires from Home, not Startup, so the window     -->
+	<!-- stack is clean and Kodi's update dialogs have fully cleared.   -->
+	<!-- =============================================================== -->
+
+	<!-- Route to intro/splash only on a clean initialized boot -->
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">AlarmClock(MadnoxBootRoute,ReplaceWindow(1101),00:00:02,true,true)</onload>
+
+	<!-- =============================================================== -->
 	<!-- INITIALIZATION SCRIPTS                                          -->
 	<!-- =============================================================== -->
 
-	<!-- First Run: delayed so skin is fully mounted before apply_template runs -->
+	<!-- First Run -->
 	<onload condition="System.HasAddon(script.skin.madnox) + !Skin.HasSetting(Madnox.Settings.Initialized)">AlarmClock(MadnoxInitDelay,RunScript(script.skin.madnox,action=apply_template),00:00:03,true,true)</onload>
 
-	<!-- Background Migration: guarded, non-blocking, safe to run immediately -->
+	<!-- Background Migration -->
 	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
 
-	<!-- Skin Shortcuts: guarded to prevent native Kodi prompt during live update -->
+	<!-- Skin Shortcuts -->
 	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
 
-	<!-- Signal that Home is loaded and notifications are now allowed -->
+	<!-- Signal Home is ready -->
 	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
 
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
 
-	<!-- TMDb Helper validation: delayed so the helper service has time to register -->
-	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:04,true,true)</onload>
+	<!-- TMDb validation -->
+	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:05,true,true)</onload>
 
-	<!-- Optional extras: delayed so it never fires mid-update or before Home renders -->
-	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:05,true,true)</onload>
+	<!-- Optional extras -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:06,true,true)</onload>
 
 	<controls>
 		<!-- Backdrop -->
