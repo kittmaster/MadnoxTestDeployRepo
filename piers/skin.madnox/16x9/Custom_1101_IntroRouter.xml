@@ -39,7 +39,7 @@
 	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload> -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
 
-<controls>
+	<controls>
 		<!-- ========================================================= -->
 		<!-- ESCAPE HATCH FOR FAILED ROUTING (Fix for Piers Alpha)     -->
 		<!-- If this window is still open after 1.5s, force it out.  -->
@@ -56,7 +56,8 @@
 			<width>1920</width>
 			<height>200</height>
 			<align>center</align>
-			<textcolor>FFFF0000</textcolor> <!-- Bright Red -->
+			<textcolor>FFFF0000</textcolor>
+			<!-- Bright Red -->
 			<label>I AM WINDOW 1101 - INTRO ROUTER</label>
 		</control>
 
@@ -66,3 +67,4 @@
 			<onfocus>PlayMedia($ESCINFO[Skin.String(IntroVideoSelectStartupValue)])</onfocus>
 		</control>
 	</controls>
+</window>
