@@ -3,23 +3,28 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<menucontrol>9050</menucontrol>
 
+	<!-- =============================================================== -->
+	<!-- INITIALIZATION SCRIPTS (Moved here from 1101 for stability) -->
+	<!-- =============================================================== -->
+	<!-- First Run Initialization -->
+	<onload condition="System.HasAddon(script.skin.madnox) + !Skin.HasSetting(Madnox.Settings.Initialized)">RunScript(script.skin.madnox, action=apply_template)</onload>
+	<!-- Background Migration -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
+
 	<!-- Skin Shortcuts (Guarded to prevent native Kodi prompt during live update) -->
 	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
-	
-	<!-- 1st Run Settings File Init And Populate Default Values -->
-	<!-- <onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ActivateWindow(1106)</onload> -->
 
 	<!-- Signal That Home Is Loaded And Notifications Are Now Allowed -->
 	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
 
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
-	
+
 	<!-- Validate TMDb Helper (Guarded so it doesn't fire before the helper script is registered) -->
 	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">RunScript(script.skin.madnox, action=validate_tmdb_helper)</onload>
 
 	<!-- Optional extras: Ask only after the skin has fully initialized via template (Guarded) -->
-	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>	
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">RunScript(script.skin.madnox,action=install_extras)</onload>
 
 	<controls>
 		<!-- Backdrop -->

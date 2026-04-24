@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
-	This file acts as a router on startup.
-	It checks the value of the 'IntroVideoSelectStartupValue' skin string.
-	- If the string has a value (a video is selected), it plays the video.
-	- If the string is empty, it immediately loads your standard splash screen (window 1103).
-	To enable this, set this file as the startup window in your skin's addon.xml file.
-	Example: <startup>custom_1101_Startup.xml</startup>
--->
 <window id="1101" type="window">
 	<!-- ================================================================= -->
-	<!-- 1. FIRST RUN INITIALIZATION (Locks all other routing)             -->
+	<!-- 1. FIRST RUN INITIALIZATION (MOVED TO HOME.XML FOR STABILITY) -->
 	<!-- ================================================================= -->
-	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">RunScript(script.skin.madnox, action=apply_template)</onload>
+	<!-- <onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">RunScript(script.skin.madnox, action=apply_template)</onload> -->
 
 	<!-- ================================================================= -->
-	<!-- 2. NORMAL BOOT (Executes ONLY after template has initialized)     -->
+	<!-- 2. NORMAL BOOT (MOVED TO HOME.XML FOR STABILITY) -->
 	<!-- ================================================================= -->
 	<!-- <onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload> -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
 
+	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
