@@ -2425,8 +2425,8 @@ msgstr "Змінити"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31481"
-msgid "Madnox skin helper service"
-msgstr "Послуга помічника шкіри Madnox"
+msgid "Madnox script skin helper addon"
+msgstr "Madnox script допоміжний аддон"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31482"
@@ -2633,6 +2633,36 @@ msgctxt "#31522"
 msgid "Images"
 msgstr "Зображення"
 
+#: SkinSettings.xml
+msgctxt "#31523"
+msgid "Display ratings as 10-point numbers"
+msgstr "Відображення оцінок у вигляді 10-бальних чисел"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31524"
+msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
+msgstr "Дозволяє змінювати рейтинги для перетворення між плаваючими числами або у відсотках. Впливає на TMDb та IMDb, усі інші залишаються стандартними."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-Run skin shortcuts migrator"
+msgstr "Повторно запустіть засіб міграції ярликів шкіри"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Це перепише файл .properties ярликів оформлення до поточної структури аддонів із 3 модулями. Запускайте, лише якщо є проблеми з фоновими зображеннями або списки відтворення не працюють."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Це повторно активує інсталятор додатків. Запускайте, лише якщо аддони не були встановлені під час першого встановлення скіна."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Спеціальний аддон для Madnox потрібен для Piers+. З метою безпеки переміщує зображення скінів у спеціальний аддон."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
@@ -2650,8 +2680,8 @@ msgstr "Надає вибір кольорів."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
-msgid "Install and select image addons."
-msgstr "Встановлення та вибір доповнень зображень."
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Сценарій для скінерів, який дозволяє користувачам вибирати аддон ресурсу зображення."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"
@@ -2987,3 +3017,18 @@ msgstr "Показати інформацію про маркер наклада
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Скрипт для редагування вбудованої стрічки RSS Kodi."
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Версія скіна та варіанти відновлення. Відновлює всі параметри за замовчуванням до операцій першого дня."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Аддони"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Версія скіна та варіанти відновлення. Відновлює всі параметри за замовчуванням до операцій першого дня."
+

@@ -98,7 +98,7 @@
 				</content>
 			</control>
 			<control type="textbox">
-				<visible>![ControlGroup(7001).HasFocus | ControlGroup(7004).HasFocus | ControlGroup(7005).HasFocus | ControlGroup(7006).HasFocus | ControlGroup(7007).HasFocus] | ControlGroup(7008).HasFocus]</visible>
+				<visible>![ControlGroup(7001).HasFocus | ControlGroup(7004).HasFocus | ControlGroup(7005).HasFocus | ControlGroup(7006).HasFocus | ControlGroup(7007).HasFocus | ControlGroup(7008).HasFocus]</visible>
 				<left>460</left>
 				<bottom>115</bottom>
 				<width>1325</width>

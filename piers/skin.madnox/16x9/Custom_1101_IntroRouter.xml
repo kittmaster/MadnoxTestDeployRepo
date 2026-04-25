@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<window id="1101" type="window">
-	<!-- ================================================================= -->
-	<!-- TMDb Helper skin settings (fires on every boot once initialized)  -->
-	<!-- ================================================================= -->
+<window id="1101">
+	<!-- TMDb Helper skin settings -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.Service)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetString(TMDbHelper.MonitorContainer,7005)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">Skin.SetBool(TMDbHelper.DirectCallAuto)</onload>
@@ -10,12 +8,14 @@
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + [!System.AddonIsEnabled(plugin.video.themoviedb.helper) | !Skin.HasSetting(BlurEnabled)]">Skin.Reset(TMDbHelper.EnableBlur)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 
-	<!-- ================================================================= -->
-	<!-- Intro Video Logic                                                  -->
-	<!-- ================================================================= -->
+	<!-- Intro Video Logic -->
+	<!-- SetFocus(10) triggers the button post-render — safe to call PlayMedia from onfocus -->
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">Skin.SetBool(Madnox.IntroActive)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">SetFocus(10)</onload>
 	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized) + String.IsEmpty(Skin.String(IntroVideoSelectStartupValue))">ReplaceWindow(1103)</onload>
+
+	<!-- Unconditional fallback: if not initialized yet, go straight to 1103 -->
+	<onload condition="!Skin.HasSetting(Madnox.Settings.Initialized)">ReplaceWindow(1103)</onload>
 
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
@@ -25,12 +25,23 @@
 	<include>onunload_SkinSettings</include>
 
 	<controls>
-		<!-- Escape hatch: if routing stalls for any reason, force out after 1.5s -->
+		<!-- Black background -->
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>colors/black.png</texture>
+		</control>
+
+		<!-- Escape hatch: if still here after 1.5s, force to 1103 -->
 		<control type="image">
 			<include>HiddenObject</include>
 			<animation effect="fade" start="100" end="100" time="1" delay="1500" onend="ReplaceWindow(1103)" condition="Window.IsVisible(1101)">WindowOpen</animation>
 		</control>
 
+		<!-- Intro trigger: onfocus fires post-render, safe for PlayMedia -->
+		<!-- VideoFullScreen.xml onplaybackended/stopped handles the exit  -->
 		<control type="button" id="10">
 			<include>HiddenObject</include>
 			<onfocus>ReplaceWindow(1108)</onfocus>

@@ -2425,8 +2425,8 @@ msgstr "Ändern"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31481"
-msgid "Madnox skin helper service"
-msgstr "Madnox-Hauthelfer-Service"
+msgid "Madnox script skin helper addon"
+msgstr "Madnox-Skript-Skin-Helfer-Add-on"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31482"
@@ -2633,6 +2633,36 @@ msgctxt "#31522"
 msgid "Images"
 msgstr "Bilder"
 
+#: SkinSettings.xml
+msgctxt "#31523"
+msgid "Display ratings as 10-point numbers"
+msgstr "Zeigen Sie Bewertungen als 10-Punkte-Zahlen an"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31524"
+msgid "Allows changes to the ratings to convert between floating numbers or as a percentage. Affects TMDb & IMDb, all others remain as their default display."
+msgstr "Ermöglicht die Umrechnung von Bewertungen in Gleitkommazahlen oder als Prozentsatz. Betrifft TMDb und IMDb, alle anderen bleiben in ihrer Standardanzeige."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31525"
+msgid "Re-Run skin shortcuts migrator"
+msgstr "Führen Sie den Skin Shortcuts Migrator erneut aus"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31526"
+msgid "This will rewrite the skin shortcuts .properties file to the current 3 module addon structure. Only run if there are issues with background images or playlists are not working."
+msgstr "Dadurch wird die .properties-Datei mit den Skin-Verknüpfungen in die aktuelle 3-Modul-Addon-Struktur umgeschrieben. Nur ausführen, wenn es Probleme mit Hintergrundbildern gibt oder Wiedergabelisten nicht funktionieren."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31527"
+msgid "This will reactivate the addons installer. Only run if addons were not installed when skin was first installed."
+msgstr "Dadurch wird das Add-on-Installationsprogramm erneut aktiviert. Nur ausführen, wenn bei der Erstinstallation des Skins keine Add-ons installiert waren."
+
+#: /16x9/Includes_Settings.xml
+msgctxt "#31528"
+msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
+msgstr "Für Piers+ ist ein spezielles Add-on für Madnox erforderlich. Verschiebt Skin-Bilder aus Sicherheitsgründen in ein spezielles Add-on."
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
@@ -2650,8 +2680,8 @@ msgstr "Bietet Farbauswahl."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31904"
-msgid "Install and select image addons."
-msgstr "Bild-Add-ons installieren und auswählen."
+msgid "Script for skinners to let users select an image resource addon."
+msgstr "Skript für Skinner, mit dem Benutzer ein Bildressourcen-Add-on auswählen können."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31905"
@@ -2987,3 +3017,18 @@ msgstr "Zeigt Überlagerungsmarkierungsinformationen für gesehene, ungesehene u
 msgctxt "#31972"
 msgid "A script for editing Kodi's built in RSS Ticker."
 msgstr "Ein Skript zum Bearbeiten des integrierten RSS-Tickers von Kodi."
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Skin-Version und Wiederherstellungsoptionen. Stellt alle Standardeinstellungen vom ersten Tag an wieder her."
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31974"
+msgid "Addons"
+msgstr "Add-ons"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31973"
+msgid "Skin version and recovery options. Restores all defaults to day one operation."
+msgstr "Skin-Version und Wiederherstellungsoptionen. Stellt alle Standardeinstellungen vom ersten Tag an wieder her."
+

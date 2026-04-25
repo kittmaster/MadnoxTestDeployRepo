@@ -4,22 +4,16 @@
 	<menucontrol>9050</menucontrol>
 
 	<!-- =============================================================== -->
-	<!-- BOOT ROUTING — fires from Home, not Startup, so the window     -->
-	<!-- stack is clean and Kodi's update dialogs have fully cleared.   -->
-	<!-- =============================================================== -->
-
-	<!-- Route to intro/splash only on a clean initialized boot -->
-	<onload condition="Skin.HasSetting(Madnox.Settings.Initialized)">AlarmClock(MadnoxBootRoute,ReplaceWindow(1101),00:00:02,true,true)</onload>
-
-	<!-- =============================================================== -->
 	<!-- INITIALIZATION SCRIPTS                                          -->
+	<!-- One-shot guard: Madnox.HomeInitDone ensures these only fire    -->
+	<!-- on the first Home load per session, not on every return.       -->
 	<!-- =============================================================== -->
 
 	<!-- First Run -->
-	<onload condition="System.HasAddon(script.skin.madnox) + !Skin.HasSetting(Madnox.Settings.Initialized)">AlarmClock(MadnoxInitDelay,RunScript(script.skin.madnox,action=apply_template),00:00:03,true,true)</onload>
+	<onload condition="System.HasAddon(script.skin.madnox) + !Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxInitDelay,RunScript(script.skin.madnox,action=apply_template),00:00:03,true,true)</onload>
 
 	<!-- Background Migration -->
-	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox, action=migrate_bgs)</onload>
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(Madnox_Backgrounds_Migrated)">RunScript(script.skin.madnox,action=migrate_bgs)</onload>
 
 	<!-- Skin Shortcuts -->
 	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onload>
@@ -27,14 +21,20 @@
 	<!-- Signal Home is ready -->
 	<onload>SetProperty(Madnox.SkinReady,True,Home)</onload>
 
+	<!-- CLEANUP INTRO STATE: Clears the boolean once we safely reach Home -->
+	<onload>Skin.Reset(Madnox.IntroActive)</onload>
+
+	<!-- TMDb validation: only on first Home load per session -->
+	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:04,true,true)</onload>
+
+	<!-- Optional extras: only on first Home load per session -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled) + !String.IsEqual(Window(Home).Property(Madnox.HomeInitDone),true)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:05,true,true)</onload>
+
+	<!-- Stamp this session so the above one-shot blocks don't re-fire on return -->
+	<onload>SetProperty(Madnox.HomeInitDone,true,Home)</onload>
+
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
-
-	<!-- TMDb validation -->
-	<onload condition="System.HasAddon(script.skin.madnox) + !System.AddonIsEnabled(plugin.video.themoviedb.helper)">AlarmClock(MadnoxTMDbCheck,RunScript(script.skin.madnox,action=validate_tmdb_helper),00:00:05,true,true)</onload>
-
-	<!-- Optional extras -->
-	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !Skin.HasSetting(madnox.extrasinstalled)">AlarmClock(MadnoxExtrasDelay,RunScript(script.skin.madnox,action=install_extras),00:00:06,true,true)</onload>
 
 	<controls>
 		<!-- Backdrop -->
