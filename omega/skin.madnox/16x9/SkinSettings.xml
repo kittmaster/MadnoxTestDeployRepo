@@ -271,6 +271,14 @@
 							<label>$LOCALIZE[31041]</label>
 							<include>SettingsLabel</include>
 						</control>
+						<!-- Vertical sidebar menu toggle (Estuary-style) -->
+						<control type="radiobutton" id="236">
+							<label>$LOCALIZE[31537] [LOWERCASE]$LOCALIZE[10822][/LOWERCASE]: $VAR[EnableDisableLabel-MainMenuVertical]</label>
+							<onclick>Skin.ToggleSetting(MainMenuVertical)</onclick>
+							<onclick>ClearProperty(VertSubOpen,Home)</onclick>
+							<selected>Skin.HasSetting(MainMenuVertical)</selected>
+							<include>SettingsRadioButton</include>
+						</control>
 						<control type="button" id="231">
 							<label>$LOCALIZE[736]</label>
 							<label2>$VAR[MainMenuStyleLabelVar]</label2>

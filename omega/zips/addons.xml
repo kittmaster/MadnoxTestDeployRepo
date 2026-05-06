@@ -375,7 +375,7 @@ v0.4.0 (2025-03-23)
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.madnox" version="21.10.07" name="Madnox" provider-name="Kittmaster">
+</addon><addon id="skin.madnox" version="21.10.08" name="Madnox" provider-name="Kittmaster">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0" />
 		<import addon="script.skin.madnox" version="1.0.5" />

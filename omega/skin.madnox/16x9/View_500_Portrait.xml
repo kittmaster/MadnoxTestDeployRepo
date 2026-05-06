@@ -28,6 +28,7 @@
 			</include>
 			<include content="ViewCoverFlowBottomInfo">
 				<param name="logovisible">View500Logo</param>
+				<param name="logowidth">840</param>
 			</include>
 			<include condition="Window.IsVisible(MyVideoNav.xml)">MediaFlagsPanelVideos</include>
 		</control>
@@ -55,8 +56,8 @@
 					<ondown>60500</ondown>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
 					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
-					<onleft>9050</onleft>
-					<onright>6055</onright>
+					<onleft>500</onleft>
+					<onright>500</onright>
 					<pagecontrol>60500</pagecontrol>
 					<focusposition>4</focusposition>
 					<orientation>horizontal</orientation>

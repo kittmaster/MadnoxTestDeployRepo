@@ -47,12 +47,18 @@
 			<include content="AnimationSlideBottomWindow">
 				<param name="slide">220</param>
 			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsTVShowsLeft">
+
+			<!-- TV Show/Episode Flags -->
+			<!-- This will show for TV Shows, Seasons, and Episodes -->
+			<include condition="Window.IsVisible(MyVideoNav.xml) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]" content="MediaFlagsTVShowsLeft">
 				<param name="align">left</param>
 				<param name="left">50</param>
 				<param name="bottom">20</param>
 			</include>
-			<include condition="Window.IsVisible(MyVideoNav.xml)" content="MediaFlagsVideos8">
+
+			<!-- Movie Flags -->
+			<!-- This will show for Movies and Movie Sets -->
+			<include condition="Window.IsVisible(MyVideoNav.xml) + [Container.Content(movies) | Container.Content(sets)]" content="MediaFlagsVideos8">
 				<param name="align">left</param>
 				<param name="left">50</param>
 				<param name="bottom">20</param>

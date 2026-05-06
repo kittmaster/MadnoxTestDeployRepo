@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8" ?>
 <includes>
 	<include name="SelectMusicOSDBackground">
 		<item>
@@ -1478,10 +1478,23 @@
 			<onclick condition="Skin.String(MusicOSDAudioInfo,none)">Skin.Reset(MusicOSDAudioInfo)</onclick>
 			<include>DialogButton</include>
 		</control>
-		<control type="radiobutton" id="105">
+		<control type="radiobutton" id="1040">
 			<label>$LOCALIZE[31196]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDBackgroundInfo)</onclick>
 			<selected>Skin.HasSetting(MusicOSDBackgroundInfo)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1041">
+			<label>Show all OSD tooltips</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1131">
+			<label>Show player OSD transport tooltips</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
+			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="label" id="106">
@@ -1726,6 +1739,19 @@
 			<onclick condition="Skin.String(VideoOSDMediaFlags,off)">Skin.Reset(VideoOSDMediaFlags)</onclick>
 			<include>DialogButton</include>
 		</control>
+		<control type="radiobutton" id="1130">
+			<label>Show all OSD tooltips</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1131">
+			<label>Show player OSD transport tooltips</label>
+			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
+			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
+			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>
+			<include>DialogRadioButton</include>
+		</control>
 		<control type="button" id="114">
 			<visible>Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
 			<label>$LOCALIZE[31211]</label>
@@ -1753,6 +1779,13 @@
 			<label>$LOCALIZE[31372]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDTimeRemaining)</onclick>
 			<selected>Skin.HasSetting(VideoOSDTimeRemaining)</selected>
+			<include>DialogRadioButton</include>
+		</control>
+		<control type="radiobutton" id="1170">
+			<visible>!Skin.String(VideoOSDInfo,persistant) + [Window.IsVisible(skinsettings) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | PVR.IsPlayingTv]</visible>
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14211] $LOCALIZE[21866][/LOWERCASE]</label>
+			<onclick>Skin.ToggleSetting(VideoOSDDisableGenreInfo)</onclick>
+			<selected>!Skin.HasSetting(VideoOSDDisableGenreInfo)</selected>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="label" id="118">

@@ -25,6 +25,21 @@
 			<animation effect="fade" delay="200" time="280">WindowOpen</animation>
 			<animation effect="fade" time="0">WindowClose</animation>
 			<top>870</top>
+			<control type="label">
+				<visible>Skin.HasSetting(VideoOSDToolTipsMaster)</visible>
+				<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
+				<right>20</right>
+				<!-- <top>0</top> -->
+				<bottom>200</bottom>
+				<align>right</align>
+				<aligny>center</aligny>
+				<width>1000</width>
+				<height>50</height>
+				<font>Font21_Cond_Bold</font>
+				<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
+				<label>$VAR[OSDHelpTextVar]</label>
+				<shadowcolor>black</shadowcolor>
+			</control>
 			<control type="group" id="4000">
 				<control type="grouplist" id="1000">
 					<left>0</left>

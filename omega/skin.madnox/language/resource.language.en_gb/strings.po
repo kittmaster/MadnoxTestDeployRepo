@@ -2659,6 +2659,61 @@ msgctxt "#31528"
 msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
 msgstr ""
 
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase Hero"
+msgstr ""
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr ""
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic Shelf"
+msgstr ""
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr ""
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr ""
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr ""
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr ""
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr ""
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr ""
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr ""
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr ""
+
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"
 msgid "Customisation of the home screen, widgets and shortcuts menu."
