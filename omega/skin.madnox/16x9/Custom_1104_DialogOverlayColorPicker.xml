@@ -3,6 +3,15 @@
 	<defaultcontrol>6</defaultcontrol>
 	<controls>
 		<control type="group">
+			<!-- SOLID BACKGROUND TO PREVENT TEXT BLEED-THROUGH -->
+			<control type="image">
+				<width>1253</width>
+				<height>855</height>
+				<!-- Use the skin's native dialog shape with an opaque color to block bleed-through perfectly -->
+				<texture colordiffuse="FF080808" border="40">$VAR[DialogStyleVar]</texture>
+				<animation effect="fade" time="400">WindowOpen</animation>
+			</control>
+
 			<include content="DialogBackground">
 				<description>Window Header Label</description>
 				<param name="width" value="1253" />

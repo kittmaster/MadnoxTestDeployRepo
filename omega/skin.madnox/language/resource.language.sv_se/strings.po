@@ -2647,8 +2647,8 @@ msgstr "Tillåter ändringar av betygen att konvertera mellan flytande tal eller
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31525"
-msgid "Re-Run skin shortcuts migrator"
-msgstr "Kör om migrator för hudgenvägar"
+msgid "Re-run skin shortcuts migrator"
+msgstr "Kör migrator för hudgenvägar igen"
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31526"
@@ -2664,6 +2664,61 @@ msgstr "Detta kommer att återaktivera installationsprogrammet för tillägg. K�
 msgctxt "#31528"
 msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
 msgstr "Dedikerad addon för Madnox krävs för Piers+. Flyttar hudbilder till ett dedikerat tillägg av säkerhetsskäl."
+
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase Hero"
+msgstr "Showcase Hero"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "Strålkastare"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic Shelf"
+msgstr "Filmhylla"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Redaktionell"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "Uppslukande"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Etapp"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Paus"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Stopp"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Visa"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Ner"
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"

@@ -49,13 +49,13 @@
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<visible>Visualisation.Enabled + !Skin.HasSetting(MusicOSDDisableVizOptionsButton)</visible>
 				</control>
-				<control type="radiobutton" id="104">
+				<!-- <control type="radiobutton" id="104">
 					<include content="DialogButtonOSD">
 						<param name="texture" value="buttons/player/visualisation.png" />
 					</include>
-
+					<onclick>ActivateWindow(Visualisation)</onclick>
 					<visible>!Skin.HasSetting(MusicOSDDisableVizButton)</visible>
-				</control>
+				</control> -->
 				<control type="radiobutton" id="105">
 					<include content="DialogButtonOSD">
 						<param name="texture" value="buttons/player/info.png" />

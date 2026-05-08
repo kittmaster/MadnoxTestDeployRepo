@@ -2645,7 +2645,7 @@ msgstr "Permite cambios en las calificaciones para convertir entre números flot
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31525"
-msgid "Re-Run skin shortcuts migrator"
+msgid "Re-run skin shortcuts migrator"
 msgstr "Vuelva a ejecutar el migrador de atajos de máscara"
 
 #: /16x9/SkinSettings.xml
@@ -2662,6 +2662,61 @@ msgstr "Esto reactivará el instalador de complementos. Ejecútelo solo si los c
 msgctxt "#31528"
 msgid "Dedicated addon for Madnox required for Piers+. Moves skin images into a dedicated addon for security purposes."
 msgstr "Se requiere un complemento dedicado para Madnox para Piers+. Mueve imágenes de máscaras a un complemento dedicado por motivos de seguridad."
+
+#: /16x9/View_052_ShowcaseHero.xml
+msgctxt "#31529"
+msgid "Showcase Hero"
+msgstr "Héroe del escaparate"
+
+#: /16x9/View_059_Spotlight.xml
+msgctxt "#31530"
+msgid "Spotlight"
+msgstr "Destacar"
+
+#: /16x9/View_060_.xml
+msgctxt "#31531"
+msgid "Cinematic Shelf"
+msgstr "Estante cinematográfico"
+
+#: /16x9/View_061_.xml
+msgctxt "#31532"
+msgid "Editorial"
+msgstr "Editorial"
+
+#: /16x9/View_062_.xml
+msgctxt "#31533"
+msgid "Immersive"
+msgstr "inmersivo"
+
+#: /16x9/View_063_.xml
+msgctxt "#31534"
+msgid "Stage"
+msgstr "Escenario"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31535"
+msgid "Pause"
+msgstr "Pausa"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31536"
+msgid "Stop"
+msgstr "Detener"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31537"
+msgid "Vertical"
+msgstr "Vertical"
+
+#: /16x9/Includes_CustomSelect.xml
+msgctxt "#31538"
+msgid "Show"
+msgstr "Espectáculo"
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31539"
+msgid "Down"
+msgstr "Abajo"
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31901"

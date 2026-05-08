@@ -691,14 +691,12 @@
 		<control type="button" id="218">
 			<description>Toggle System Widget Layout</description>
 			<include>MediaMenuButton</include>
-			<label>Widget Layout</label>
+			<label>$LOCALIZE[31544]</label>
 			<label2>$VAR[SystemWidgetLayoutVar]</label2>
 			<onclick>Skin.ToggleSetting(SystemWidget.GridMode)</onclick>
-			<!-- Only Show This Option When Highlighting The System Menu Item -->
-			<!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widgetType.1),system)</visible> -->
 		</control>
 		<control type="radiobutton" id="203">
-			<label>$LOCALIZE[31043]</label>
+			<label>$LOCALIZE[31043]: $VAR[EnableDisableLabel-MainMenuFixedList]</label>
 			<onclick>Skin.ToggleSetting(MainMenuFixedList)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<selected>Skin.HasSetting(MainMenuFixedList)</selected>
@@ -709,7 +707,7 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="208">
-			<label>$LOCALIZE[31288]</label>
+			<label>$LOCALIZE[31288]: $VAR[EnableDisableLabel-SubmenuHide]</label>
 			<onclick>Skin.ToggleSetting(SubmenuHide)</onclick>
 			<selected>Skin.HasSetting(SubmenuHide)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -719,49 +717,49 @@
 			<include>MediaMenuLabel</include>
 		</control>
 		<control type="radiobutton" id="210">
-			<label>$LOCALIZE[10111]</label>
+			<label>$LOCALIZE[10111]: $VAR[EnableDisableLabel-ShortCutDisablePower]</label>
 			<onclick>Skin.ToggleSetting(ShortCutDisablePower)</onclick>
 			<selected>!Skin.HasSetting(ShortCutDisablePower)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="211">
-			<label>$LOCALIZE[3]</label>
+			<label>$LOCALIZE[3]: $VAR[EnableDisableLabel-ShortCutEnableVideos]</label>
 			<onclick>Skin.ToggleSetting(ShortCutEnableVideos)</onclick>
 			<selected>Skin.HasSetting(ShortCutEnableVideos)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="212">
-			<label>$LOCALIZE[137]</label>
+			<label>$LOCALIZE[137]: $VAR[EnableDisableLabel-ShortCutDisableSearch]</label>
 			<onclick>Skin.ToggleSetting(ShortCutDisableSearch)</onclick>
 			<selected>!Skin.HasSetting(ShortCutDisableSearch)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="213">
-			<label>$LOCALIZE[1036]</label>
+			<label>$LOCALIZE[1036]: $VAR[EnableDisableLabel-ShortcutDisableFav]</label>
 			<onclick>Skin.ToggleSetting(ShortcutDisableFav)</onclick>
 			<selected>!Skin.HasSetting(ShortcutDisableFav)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="214">
-			<label>$LOCALIZE[653]</label>
+			<label>$LOCALIZE[653]: $VAR[EnableDisableLabel-ShortcutDisableUpdate]</label>
 			<onclick>Skin.ToggleSetting(ShortcutDisableUpdate)</onclick>
 			<selected>!Skin.HasSetting(ShortcutDisableUpdate)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="215">
-			<label>$LOCALIZE[427]</label>
+			<label>$LOCALIZE[427]: $VAR[EnableDisableLabel-ShortcutEnableDisc]</label>
 			<onclick>Skin.ToggleSetting(ShortcutEnableDisc)</onclick>
 			<selected>Skin.HasSetting(ShortcutEnableDisc)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="216">
-			<label>$LOCALIZE[13391]</label>
+			<label>$LOCALIZE[13391]: $VAR[EnableDisableLabel-ShortcutEnableEject]</label>
 			<onclick>Skin.ToggleSetting(ShortcutEnableEject)</onclick>
 			<selected>Skin.HasSetting(ShortcutEnableEject)</selected>
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="217">
-			<label>$LOCALIZE[24992]</label>
+			<label>$LOCALIZE[24992]: $VAR[EnableDisableLabel-ShortCutEnableSystem]</label>
 			<onclick>Skin.ToggleSetting(ShortCutEnableSystem)</onclick>
 			<selected>Skin.HasSetting(ShortCutEnableSystem)</selected>
 			<include>MediaMenuRadioButton</include>

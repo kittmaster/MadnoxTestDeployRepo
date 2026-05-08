@@ -1589,12 +1589,12 @@
 			<label>$LOCALIZE[35059]</label>
 			<include>DialogLabel</include>
 		</control>
-		<control type="radiobutton" id="121">
+		<!-- <control type="radiobutton" id="121">
 			<label>$LOCALIZE[250]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizButton)</onclick>
 			<selected>!Skin.HasSetting(MusicOSDDisableVizButton)</selected>
 			<include>DialogRadioButton</include>
-		</control>
+		</control> -->
 		<control type="radiobutton" id="122">
 			<label>$LOCALIZE[31334]</label>
 			<onclick>Skin.ToggleSetting(MusicOSDDisableVizPresetsButton)</onclick>

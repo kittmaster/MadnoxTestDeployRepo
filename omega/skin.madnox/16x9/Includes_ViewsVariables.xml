@@ -1663,23 +1663,103 @@
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable>
 
+	<variable name="EnableDisableLabel-MainMenuFixedList">
+		<value condition="Skin.HasSetting(MainMenuFixedList)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-SubmenuHide">
+		<value condition="Skin.HasSetting(SubmenuHide)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutDisablePower">
+		<value condition="!Skin.HasSetting(ShortCutDisablePower)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutEnableVideos">
+		<value condition="Skin.HasSetting(ShortCutEnableVideos)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutDisableSearch">
+		<value condition="!Skin.HasSetting(ShortCutDisableSearch)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutDisableFav">
+		<value condition="!Skin.HasSetting(ShortcutDisableFav)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutDisableUpdate">
+		<value condition="!Skin.HasSetting(ShortcutDisableUpdate)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutEnableDisc">
+		<value condition="Skin.HasSetting(ShortcutEnableDisc)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortcutEnableEject">
+		<value condition="Skin.HasSetting(ShortcutEnableEject)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
+	<variable name="EnableDisableLabel-ShortCutEnableSystem">
+		<value condition="Skin.HasSetting(ShortCutEnableSystem)">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable>
+
 	<!-- <variable name="EnableDisableLabel-XXXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable> -->
 
 	<!-- <variable name="EnableDisableLabel-XXXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable> -->
 
 	<!-- <variable name="EnableDisableLabel-XXXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable> -->
 
 	<!-- <variable name="EnableDisableLabel-XXXXX">
-		<value condition="!Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
+		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
+	</variable> -->
+
+	<!-- <variable name="EnableDisableLabel-XXXXX">
+		<value condition="Skin.HasSetting()">[COLOR FF66BB66]$LOCALIZE[305][/COLOR]</value>
 		<value>[COLOR FFCC4444]$LOCALIZE[1223][/COLOR]</value>
 	</variable> -->
 

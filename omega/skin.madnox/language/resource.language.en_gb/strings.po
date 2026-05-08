@@ -2271,7 +2271,7 @@ msgstr ""
 
 #: /16x9/Skin_Settings.xml
 msgctxt "#31451"
-msgid "PreShow Experience"
+msgid "PreShow experience"
 msgstr ""
 
 #: /16x9/Skin_Settings.xml
@@ -2641,7 +2641,7 @@ msgstr ""
 
 #: /16x9/SkinSettings.xml
 msgctxt "#31525"
-msgid "Re-Run skin shortcuts migrator"
+msgid "Re-run skin shortcuts migrator"
 msgstr ""
 
 #: /16x9/SkinSettings.xml
@@ -2712,6 +2712,31 @@ msgstr ""
 #: /16x9/VideoOSD.xml
 msgctxt "#31539"
 msgid "Down"
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31540"
+msgid "Save Madnox current settings to the preset folder."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31541"
+msgid "Load Madnox previously saved settings from the preset folder."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31542"
+msgid "Export current settings to an external file (Used for sharing or collaboration)."
+msgstr ""
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31543"
+msgid "Import settings from an external file (Used for sharing or collaboration). Invalid files/format will not be loaded."
+msgstr ""
+
+#: /16x9/Includes_MediaMenu.xml
+msgctxt "#31544"
+msgid "Widget Layout"
 msgstr ""
 
 #: /16x9/Includes_Settings.xml

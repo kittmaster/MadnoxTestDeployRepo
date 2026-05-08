@@ -51,7 +51,7 @@
 	<include name="SettingsLeftLabelWidgetsShortcut">
 		<top>132</top>
 		<left>100</left>
-		<width>520</width>
+		<width>580</width>
 		<height>67</height>
 		<textoffsetx>25</textoffsetx>
 		<font>Font33_Bold_Caps</font>
@@ -417,9 +417,13 @@
 	<!-- Advanced Description -->
 	<variable name="AdvancedDescriptionVar">
 		<value condition="Control.HasFocus(802)">$LOCALIZE[31506]</value>
-		<value condition="Control.HasFocus(803)">$LOCALIZE[31527]</value>
-		<value condition="Control.HasFocus(804)">$LOCALIZE[31526]</value>
-		<value condition="Control.HasFocus(805)">$LOCALIZE[31470]</value>
+		<value condition="Control.HasFocus(803)">$LOCALIZE[31540]</value>
+		<value condition="Control.HasFocus(804)">$LOCALIZE[31541]</value>
+		<value condition="Control.HasFocus(805)">$LOCALIZE[31542]</value>
+		<value condition="Control.HasFocus(806)">$LOCALIZE[31543]</value>
+		<value condition="Control.HasFocus(807)">$LOCALIZE[31527]</value>
+		<value condition="Control.HasFocus(808)">$LOCALIZE[31526]</value>
+		<value condition="Control.HasFocus(809)">$LOCALIZE[31470]</value>
 		<value condition="Container(7000).HasFocus(8)">$LOCALIZE[31973]</value>
 	</variable>
 
@@ -460,16 +464,29 @@
 		<value>$INFO[System.AddonVersion(plugin.video.themoviedb.helper),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
+	<!-- Recommended Addons -->
+	<variable name="AddonLyricsVar">
+		<value condition="!System.HasAddon(script.cu.lrclyrics)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(script.cu.lrclyrics)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(script.cu.lrclyrics),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>
+
+	<variable name="AddonKittmasterRepoVar">
+		<value condition="!System.HasAddon(repository.kittmaster)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(repository.kittmaster)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(repository.kittmaster),v, ][COLOR green]✓[/COLOR]</value>
+	</variable>
+
 	<variable name="AddonWikipediaVar">
 		<value condition="!System.HasAddon(script.wikipedia)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.wikipedia)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.wikipedia),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<variable name="AddonMovieGenreIconsBW">
-		<value condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.bw),v, ][COLOR green]✓[/COLOR]</value>
+	<variable name="AddonArtworkDumpVar">
+		<value condition="!System.HasAddon(script.artwork.dump)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(script.artwork.dump)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(script.artwork.dump),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
 	<variable name="AddonMovieGenreIconsColor">
@@ -478,14 +495,14 @@
 		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.colour),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<!-- Recommended Addons -->
-	<variable name="AddonLyricsVar">
-		<value condition="!System.HasAddon(script.cu.lrclyrics)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(script.cu.lrclyrics)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(script.cu.lrclyrics),v, ][COLOR green]✓[/COLOR]</value>
+	<!-- Optional Addons -->
+
+	<variable name="AddonMovieGenreIconsBW">
+		<value condition="!System.HasAddon(resource.images.moviegenreicons.filmstrip-hd.bw)">[COLOR red]✕[/COLOR]</value>
+		<value condition="!System.AddonIsEnabled(resource.images.moviegenreicons.filmstrip-hd.bw)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
+		<value>$INFO[System.AddonVersion(resource.images.moviegenreicons.filmstrip-hd.bw),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
-	<!-- Optional Addons -->
 	<variable name="AddonPreShowExperienceVar">
 		<value condition="!System.HasAddon(script.preshowexperience)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.preshowexperience)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
@@ -502,12 +519,6 @@
 		<value condition="!System.HasAddon(script.favourites)">[COLOR red]✕[/COLOR]</value>
 		<value condition="!System.AddonIsEnabled(script.favourites)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
 		<value>$INFO[System.AddonVersion(script.favourites),v, ][COLOR green]✓[/COLOR]</value>
-	</variable>
-
-	<variable name="AddonArtworkDumpVar">
-		<value condition="!System.HasAddon(script.artwork.dump)">[COLOR red]✕[/COLOR]</value>
-		<value condition="!System.AddonIsEnabled(script.artwork.dump)">$LOCALIZE[1223]  [COLOR orange]✕[/COLOR]</value>
-		<value>$INFO[System.AddonVersion(script.artwork.dump),v, ][COLOR green]✓[/COLOR]</value>
 	</variable>
 
 	<variable name="AddonArtistSlideshowVar">

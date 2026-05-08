@@ -69,6 +69,7 @@
 			<!-- List -->
 			<control type="list" id="55">
 				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="357" condition="Container.Content(episodes)">conditional</animation>
 				<left>545</left>
 				<bottom>10</bottom>
 				<width>802</width>
@@ -89,6 +90,7 @@
 			</control>
 			<control type="image">
 				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="367" condition="Container.Content(episodes)">conditional</animation>
 				<right>570</right>
 				<top>570</top>
 				<width>4</width>
@@ -353,6 +355,7 @@
 				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))</visible>
 				<animation effect="slide" end="-5" time="200" condition="Control.HasFocus(60551)">Conditional</animation>
 				<animation effect="slide" end="0,143" condition="Container.Content(episodes)">conditional</animation>
+				<animation effect="height" end="143" condition="Container.Content(episodes)">conditional</animation>
 				<right>-20</right>
 				<top>662</top>
 				<bottom>132</bottom>
