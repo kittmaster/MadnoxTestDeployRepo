@@ -76,6 +76,11 @@
 				<height>500</height>
 				<!-- Script Trigger: Runs Once When Entering The List -->
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: path check and timing handled in Python -->
+				<!-- Global Collection View Sync: fires SetViewMode at the exact right moment -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
+				<onclick>Action(Select)</onclick>
+				<onclick condition="String.IsEqual(ListItem.DBTYPE,set) | Container.Content(sets)">RunScript(script.skin.madnox, action=collection_view_sync, mode=enter)</onclick>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 				<onleft>9050</onleft>
 				<onright>6055</onright>

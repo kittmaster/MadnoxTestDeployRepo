@@ -22,7 +22,7 @@ from resources.lib import set_intro_label
 from resources.lib import tmdb_helper_settingswriter as TMDb_Helper_SettingsWriter
 from resources.lib import tmdb_installed_validation
 from resources.lib import trailer_rolling
-from resources.lib import view_sync_monitor
+from resources.lib import collection_view_sync
 
 
 def get_params():
@@ -87,10 +87,18 @@ def main():
         elif action == 'install_extras':
             from resources.lib.install_extras import run
             run()
+            
+        # ==========================================
+        # NEW PRESET MANAGER ROUTE
+        # ==========================================
         elif action == "manage_presets":
             preset_manager.run()
-        elif action == "view_sync_monitor":
-            view_sync_monitor.run()            
+
+        # ==========================================
+        # GLOBAL COLLECTION VIEW SYNC
+        # ==========================================
+        elif action == "collection_view_sync":
+            collection_view_sync.run(params)
 
     finally:
         home_window.clearProperty('scriptdialog')

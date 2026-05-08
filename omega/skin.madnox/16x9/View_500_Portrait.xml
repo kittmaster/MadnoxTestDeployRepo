@@ -55,6 +55,8 @@
 					<onup condition="Skin.String(View500InfoDelay,manual) + !ListItem.IsParentFolder">9999</onup>
 					<ondown>60500</ondown>
 					<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+					<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+					<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 					<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
 					<onleft>500</onleft>
 					<onright>500</onright>

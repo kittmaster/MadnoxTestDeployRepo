@@ -5,7 +5,8 @@
 	<onload condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + Skin.HasSetting(BlurEnabled)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 	<!-- Start the ratings processing script in background monitor mode for the Library view -->
 	<onload>RunScript(script.skin.madnox, action=process_ratings, mode=monitor, window_id=videos)</onload>
-	<onload>RunScript(script.skin.madnox, action=view_sync_monitor)</onload>
+	<!-- Global Collection View Sync: enforce saved view on every container load -->
+	<onload>RunScript(script.skin.madnox, action=collection_view_sync, mode=apply)</onload>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<views>50,51,52,53,54,55,56,57,58,59,60,61,62,63,500,501,502,503,504,505,506,507,508,509,510,511,512,520,521,522,523,530,531,532,533,540,541,542,543</views>
 	<menucontrol>9050</menucontrol>

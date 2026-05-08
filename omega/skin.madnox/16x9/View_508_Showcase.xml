@@ -399,6 +399,8 @@
 				<width>1820</width>
 				<height>396</height>
 				<onfocus>RunScript(script.skin.madnox, action=trailer_rolling)</onfocus>
+				<!-- Global Collection View Sync: backup enforcer fires when list gains focus -->
+				<onfocus>RunScript(script.skin.madnox, action=collection_view_sync, mode=focus)</onfocus>
 				<onup condition="!Skin.String(View508InfoDelay,manual) | ListItem.IsParentFolder | String.Startswith(ListItem.Label,*)">9050</onup>
 				<onup condition="Skin.String(View508InfoDelay,manual) + !ListItem.IsParentFolder + !String.Startswith(ListItem.Label,*)">9999</onup>
 				<onunfocus>RunScript(script.skin.madnox, action=trailer_cleanup)</onunfocus>
