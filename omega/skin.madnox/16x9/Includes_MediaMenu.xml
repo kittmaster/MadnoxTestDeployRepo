@@ -2162,7 +2162,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Skin.HasSetting(View50HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View50UseBanner)</onclick>
 			<selected>Skin.HasSetting(View50UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2272,7 +2272,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="106">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View52UseBanner)</onclick>
 			<selected>Skin.HasSetting(View52UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2299,7 +2299,7 @@
 		</control>
 		<control type="radiobutton" id="107">
 			<visible>!Skin.HasSetting(View53HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View53UseBanner)</onclick>
 			<selected>Skin.HasSetting(View53UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2358,7 +2358,7 @@
 		</control>
 		<control type="radiobutton" id="109">
 			<visible>!Skin.HasSetting(View54HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View54UseBanner)</onclick>
 			<selected>Skin.HasSetting(View54UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2417,7 +2417,7 @@
 		</control>
 		<control type="radiobutton" id="108">
 			<visible>!Skin.HasSetting(View55HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View55UseBanner)</onclick>
 			<selected>Skin.HasSetting(View55UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2523,7 +2523,7 @@
 		</control>
 		<control type="radiobutton" id="108">
 			<visible>!Skin.HasSetting(View57HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View57UseBanner)</onclick>
 			<selected>Skin.HasSetting(View57UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2589,7 +2589,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Skin.HasSetting(View58HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View58UseBanner)</onclick>
 			<selected>Skin.HasSetting(View58UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2647,7 +2647,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="106">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View59UseBanner)</onclick>
 			<selected>Skin.HasSetting(View59UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2680,7 +2680,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="105">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View60UseBanner)</onclick>
 			<selected>Skin.HasSetting(View60UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2719,7 +2719,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="106">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View61UseBanner)</onclick>
 			<selected>Skin.HasSetting(View61UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2752,7 +2752,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="105">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View62UseBanner)</onclick>
 			<selected>Skin.HasSetting(View62UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2785,7 +2785,7 @@
 			<include>MediaMenuRadioButton</include>
 		</control>
 		<control type="radiobutton" id="105">
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View63UseBanner)</onclick>
 			<selected>Skin.HasSetting(View63UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2845,7 +2845,7 @@
 		</control>
 		<control type="radiobutton" id="112">
 			<visible>Skin.HasSetting(View500Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View500UseBanner)</onclick>
 			<selected>Skin.HasSetting(View500UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -2936,7 +2936,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(View501Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View501UseBanner)</onclick>
 			<selected>Skin.HasSetting(View501UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3010,7 +3010,7 @@
 		</control>
 		<control type="radiobutton" id="110">
 			<visible>Skin.HasSetting(View502Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View502UseBanner)</onclick>
 			<selected>Skin.HasSetting(View502UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3096,7 +3096,7 @@
 		</control>
 		<control type="radiobutton" id="112">
 			<visible>Skin.HasSetting(View503Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View503UseBanner)</onclick>
 			<selected>Skin.HasSetting(View503UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3163,7 +3163,7 @@
 		</control>
 		<control type="radiobutton" id="110">
 			<visible>Skin.HasSetting(View504Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View504UseBanner)</onclick>
 			<selected>Skin.HasSetting(View504UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3230,7 +3230,7 @@
 		</control>
 		<control type="radiobutton" id="109">
 			<visible>Skin.HasSetting(View505Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View505UseBanner)</onclick>
 			<selected>Skin.HasSetting(View505UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3406,7 +3406,7 @@
 		</control>
 		<control type="radiobutton" id="113">
 			<visible>Skin.HasSetting(View508Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View508UseBanner)</onclick>
 			<selected>Skin.HasSetting(View508UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3504,7 +3504,7 @@
 		</control>
 		<control type="radiobutton" id="112">
 			<visible>Skin.HasSetting(View509Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View509UseBanner)</onclick>
 			<selected>Skin.HasSetting(View509UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3555,7 +3555,7 @@
 		</control>
 		<control type="radiobutton" id="109">
 			<visible>Skin.HasSetting(View510Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View510UseBanner)</onclick>
 			<selected>Skin.HasSetting(View510UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3614,7 +3614,7 @@
 		</control>
 		<control type="radiobutton" id="108">
 			<visible>Skin.HasSetting(View511Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View511UseBanner)</onclick>
 			<selected>Skin.HasSetting(View511UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3659,7 +3659,7 @@
 		</control>
 		<control type="radiobutton" id="108">
 			<visible>Skin.HasSetting(View512Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View512UseBanner)</onclick>
 			<selected>Skin.HasSetting(View512UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3725,7 +3725,7 @@
 		</control>
 		<control type="radiobutton" id="112">
 			<visible>Skin.HasSetting(View520Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View520UseBanner)</onclick>
 			<selected>Skin.HasSetting(View520UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3804,7 +3804,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(View521Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View521UseBanner)</onclick>
 			<selected>Skin.HasSetting(View521UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3836,7 +3836,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(View522Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View522UseBanner)</onclick>
 			<selected>Skin.HasSetting(View522UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3911,7 +3911,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Container.Content(images) + Skin.HasSetting(View523Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View523UseBanner)</onclick>
 			<selected>Skin.HasSetting(View523UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -3975,7 +3975,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Skin.HasSetting(View530HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View530UseBanner)</onclick>
 			<selected>Skin.HasSetting(View530UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4034,7 +4034,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>[Container.Content(artists) | Container.Content(albums)] + !Skin.HasSetting(View531HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View531UseBanner)</onclick>
 			<selected>Skin.HasSetting(View531UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4072,7 +4072,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Skin.HasSetting(View532HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View532UseBanner)</onclick>
 			<selected>Skin.HasSetting(View532UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4139,7 +4139,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Skin.HasSetting(View533HideLogo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View533UseBanner)</onclick>
 			<selected>Skin.HasSetting(View533UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4200,7 +4200,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Container.Content(genres) + Skin.HasSetting(View540Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View540UseBanner)</onclick>
 			<selected>Skin.HasSetting(View540UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4266,7 +4266,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>[Container.Content(artists) | Container.Content(albums)] + Skin.HasSetting(View541Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View541UseBanner)</onclick>
 			<selected>Skin.HasSetting(View541UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4292,7 +4292,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>Skin.HasSetting(View542Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View542UseBanner)</onclick>
 			<selected>Skin.HasSetting(View542UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>
@@ -4348,7 +4348,7 @@
 		</control>
 		<control type="radiobutton" id="111">
 			<visible>!Container.Content(images) + Skin.HasSetting(View543Logo)</visible>
-			<label>Prefer Banners</label>
+			<label>$LOCALIZE[31545] [LOWERCASE]$LOCALIZE[20020][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(View543UseBanner)</onclick>
 			<selected>Skin.HasSetting(View543UseBanner)</selected>
 			<include>MediaMenuRadioButton</include>

@@ -35,6 +35,22 @@
 	<!-- Stamp this session so the above one-shot blocks don't re-fire on return -->
 	<onload>SetProperty(Madnox.HomeInitDone,true,Home)</onload>
 
+	<!-- =============================================================== -->
+	<!-- POST-UPDATE DETECTION                                           -->
+	<!-- Fires when: skin is initialised AND the stored version string  -->
+	<!-- doesn't match the currently running skin version.              -->
+	<!--                                                                 -->
+	<!-- The HomeInitDone property is set just above, so we can't use   -->
+	<!-- it as a "first load" guard here — it's always true at this     -->
+	<!-- point in execution. The version mismatch itself is the guard:  -->
+	<!-- once skin_updated.py stores the new version, this condition    -->
+	<!-- will be false on every subsequent return to Home this session. -->
+	<!--                                                                 -->
+	<!-- AlarmClock delay of 4s lets skinshortcuts finish its build and  -->
+	<!-- the 1101→1103 splash sequence complete before the toast pops.  -->
+	<!-- =============================================================== -->
+	<onload condition="System.HasAddon(script.skin.madnox) + Skin.HasSetting(Madnox.Settings.Initialized) + !String.IsEqual(Skin.String(Madnox.LastVersion),$INFO[System.AddonVersion(skin.madnox)])">AlarmClock(MadnoxUpdateNotify,RunScript(script.skin.madnox,action=skin_updated),00:00:04,true,true)</onload>
+
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|shortcuts)</onunload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(skinshortcuts-build))">ClearProperty(skinshortcuts-build,Home)</onunload>
 

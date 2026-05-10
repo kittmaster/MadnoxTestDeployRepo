@@ -987,6 +987,7 @@
 		</control>
 
 		<!-- ========================================================================= -->
+		<!-- Debug must be active to see these labels, DEV only use                    -->
 		<!-- X-RAY HUD FOR ACTOR METADATA (To map Studio/MPAA filenames)               -->
 		<!-- ========================================================================= -->
 		<control type="grouplist">
@@ -1266,7 +1267,7 @@
 						<description>View Tracks</description>
 						<visible>String.IsEqual(ListItem.DBType,album) and !Control.HasFocus(9050)</visible>
 						<label>:</label>
-						<label2>View Tracks</label2>
+						<label2>$LOCALIZE[21483] [LOWERCASE]$LOCALIZE[182][/LOWERCASE]</label2>
 						<onclick>SetFocus(9050)</onclick>
 					</item>
 					<item id="103">

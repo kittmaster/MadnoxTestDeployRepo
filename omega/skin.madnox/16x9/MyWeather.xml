@@ -730,7 +730,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>UV Index</label>
+					<label>$LOCALIZE[403]</label>
 				</control>
 				<!-- UV INDEX value -->
 				<control type="label">
@@ -752,7 +752,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Dew Point</label>
+					<label>$LOCALIZE[405]</label>
 				</control>
 				<!-- DEW POINT value -->
 				<control type="label">
@@ -775,7 +775,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Visibility</label>
+					<label>$LOCALIZE[31556]</label>
 				</control>
 				<!-- VISIBILITY value -->
 				<control type="label">
@@ -798,7 +798,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Pressure</label>
+					<label>$LOCALIZE[1376]</label>
 				</control>
 				<!-- PRESSURE value -->
 				<control type="label">
@@ -1003,7 +1003,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>UV Index</label>
+					<label>$LOCALIZE[403]</label>
 				</control>
 				<!-- UV INDEX value -->
 				<control type="label">
@@ -1025,7 +1025,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Dew Point</label>
+					<label>$LOCALIZE[405]</label>
 				</control>
 				<!-- DEW POINT value -->
 				<control type="label">
@@ -1048,7 +1048,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Visibility</label>
+					<label>$LOCALIZE[31556]</label>
 				</control>
 				<!-- VISIBILITY value -->
 				<control type="label">
@@ -1071,7 +1071,7 @@
 					<height>30</height>
 					<font>Font22_Reg</font>
 					<textcolor>grey</textcolor>
-					<label>Pressure</label>
+					<label>$LOCALIZE[1376]</label>
 				</control>
 				<!-- PRESSURE value -->
 				<control type="label">

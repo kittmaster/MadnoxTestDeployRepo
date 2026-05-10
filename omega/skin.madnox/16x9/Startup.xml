@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Startup.xml  (Window ID 10000)
+    ══════════════════════════════════════════════════════════════════════
+    First window Kodi renders after any skin reload or update.
+    Shows instantly — covers the black gap on both normal boots and
+    post-update reloads.
+
+    startup_bg.jpg has the Madnox logo and V3 text baked in, so no
+    separate logo control is needed here.
+
+    AlarmClock hands off to 1101 async after 1s so the splash actually
+    renders on screen before transitioning.
+
+    TEXTURE RULE: startup_bg.jpg lives in skin.madnox/startup/ — NOT in
+    resource.images — guaranteed available during staggered addon updates.
+    ══════════════════════════════════════════════════════════════════════
+-->
 <window>
-	<onload>ReplaceWindow(1101)</onload>
+	<defaultcontrol always="true">9001</defaultcontrol>
+
+	<!-- Hand off to intro router after splash has rendered.             -->
+	<!-- AlarmClock is async — splash renders fully before 1101 loads.  -->
+	<onload>AlarmClock(MadnoxStartup,ReplaceWindow(1101),00:00:01,true,true)</onload>
+
+	<controls>
+		<!-- ── Full-screen splash (logo baked in) ───────────────────────── -->
+		<control type="image" id="9001">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>startup/startup_bg.jpg</texture>
+		</control>
+
+		<!-- ── Spinner — positioned below the V3 text ───────────────────── -->
+		<control type="image">
+			<centerleft>50%</centerleft>
+			<top>920</top>
+			<width>60</width>
+			<height>60</height>
+			<aspectratio>keep</aspectratio>
+			<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" condition="true">Conditional</animation>
+			<texture colordiffuse="$VAR[PanelHighlightColorVar]">panels/spinner.png</texture>
+		</control>
+	</controls>
 </window>

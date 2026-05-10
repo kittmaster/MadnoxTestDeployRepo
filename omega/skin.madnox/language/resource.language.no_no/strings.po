@@ -2724,16 +2724,6 @@ msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Tilpasning av hjemmeskjermen, widgets og snarvei-meny."
 
 #: /16x9/Includes_Settings.xml
-msgctxt "#31902"
-msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "Hjelpeskript for å tilby ekstra skin-funksjoner, inkludert flere widgets, kinomodus og uskarp bakgrunn."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31903"
-msgid "Provides colour selection."
-msgstr "Gir fargevalg."
-
-#: /16x9/Includes_Settings.xml
 msgctxt "#31904"
 msgid "Script for skinners to let users select an image resource addon."
 msgstr "Skript for skinnere for å la brukere velge et bilderessurs-tillegg."
@@ -2757,11 +2747,6 @@ msgstr "Tekst for musikk. Kreves for å aktivere animert tekst."
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
 msgstr "Synkroniser samlingen og sett status med trakt.tv."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31909"
-msgid "TMDb information dialogs and widgets."
-msgstr "TMDb informasjonsdialoger og widgets."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"

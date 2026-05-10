@@ -1777,7 +1777,7 @@
 						</control>
 						<!-- Preset Management Dialog -->
 						<control type="button" id="803">
-							<label>Manage presets</label>
+							<label>$LOCALIZE[31028] [LOWERCASE]$LOCALIZE[31549][/LOWERCASE]</label>
 							<onclick>RunScript(script.skin.madnox, action=manage_presets)</onclick>
 							<include>SettingsButton</include>
 						</control>

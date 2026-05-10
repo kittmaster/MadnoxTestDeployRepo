@@ -2724,16 +2724,6 @@ msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "Налаштування домашнього екрана, віджетів та меню швидкого доступу."
 
 #: /16x9/Includes_Settings.xml
-msgctxt "#31902"
-msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "Допоміжний скрипт для надання додаткових функцій та можливостей скіна, включаючи додаткові віджети, режим кінотеатру та розмиті фони."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31903"
-msgid "Provides colour selection."
-msgstr "Надає вибір кольорів."
-
-#: /16x9/Includes_Settings.xml
 msgctxt "#31904"
 msgid "Script for skinners to let users select an image resource addon."
 msgstr "Сценарій для скінерів, який дозволяє користувачам вибирати аддон ресурсу зображення."
@@ -2757,11 +2747,6 @@ msgstr "Тексти пісень для музики. Необхідно для
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
 msgstr "Синхронізуйте свою колекцію та статус перегляду з trakt.tv."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31909"
-msgid "TMDb information dialogs and widgets."
-msgstr "Діалогові вікна та віджети інформації TMDb."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"

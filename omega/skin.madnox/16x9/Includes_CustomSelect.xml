@@ -1485,13 +1485,13 @@
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="radiobutton" id="1041">
-			<label>Show all OSD tooltips</label>
+			<label>$LOCALIZE[31553] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31554][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
 			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="radiobutton" id="1131">
-			<label>Show player OSD transport tooltips</label>
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14200][/LOWERCASE] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31555] $LOCALIZE[31554][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
 			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
 			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>
@@ -1740,13 +1740,13 @@
 			<include>DialogButton</include>
 		</control>
 		<control type="radiobutton" id="1130">
-			<label>Show all OSD tooltips</label>
+			<label>$LOCALIZE[31553] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31554][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMaster)</onclick>
 			<selected>Skin.HasSetting(VideoOSDToolTipsMaster)</selected>
 			<include>DialogRadioButton</include>
 		</control>
 		<control type="radiobutton" id="1131">
-			<label>Show player OSD transport tooltips</label>
+			<label>$LOCALIZE[31538] [LOWERCASE]$LOCALIZE[14200][/LOWERCASE] $LOCALIZE[478] [LOWERCASE]$LOCALIZE[31555] $LOCALIZE[31554][/LOWERCASE]</label>
 			<onclick>Skin.ToggleSetting(VideoOSDToolTipsMasterPlayerOff)</onclick>
 			<selected>Skin.HasSetting(VideoOSDToolTipsMasterPlayerOff)</selected>
 			<enable>Skin.HasSetting(VideoOSDToolTipsMaster)</enable>

@@ -27,15 +27,15 @@
 				<width>1200</width>
 				<height>50</height>
 				<align>left</align>
-				<label>Madnox Preset Manager</label>
+				<label>Madnox [LOWERCASE]$LOCALIZE[13388] $LOCALIZE[31546][/LOWERCASE]</label>
 				<include>SettingsLabel</include>
 			</control>
 
 			<control type="image">
-				<left>125</left>
-				<bottom>20</bottom>
-				<width>194.9</width>
-				<height>103.8</height>
+				<left>1100</left>
+				<top>14</top>
+				<width>161.5</width>
+				<height>86</height>
 				<aspectratio>keep</aspectratio>
 				<texture>icons/logo.png</texture>
 			</control>
@@ -62,38 +62,38 @@
 				<control type="button" id="9002">
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>Create New Preset</label>
+					<label>$LOCALIZE[31331] [LOWERCASE]$LOCALIZE[842] $LOCALIZE[13388][/LOWERCASE]</label>
 				</control>
 
 				<control type="button" id="9003">
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>Import from File (Ext)</label>
+					<label>$LOCALIZE[31547]</label>
 				</control>
 
 				<control type="button" id="9004">
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>Export to Folder (Ext)</label>
+					<label>$LOCALIZE[31548]</label>
 				</control>
 
 				<control type="button" id="9005">
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>[COLOR FFCC4444]Delete ALL Presets[/COLOR]</label>
+					<label>[COLOR FFCC4444]$LOCALIZE[117] [UPPERCASE]$LOCALIZE[593][/UPPERCASE] [LOWERCASE]$LOCALIZE[31549][/LOWERCASE][/COLOR]</label>
 				</control>
 
 				<control type="image" id="9099">
 					<width>400</width>
 					<height>150</height>
-					<texture>colors/transparent.png</texture>
+					<!-- <texture>colors/transparent.png</texture> -->
 				</control>
 
 				<!-- NEW AM/PM TOGGLE -->
 				<control type="radiobutton" id="9006">
 					<width>400</width>
 					<include>DialogButton</include>
-					<label>24 Hour / 12 Hour</label>
+					<label>$LOCALIZE[12383]</label>
 					<selected>Skin.HasSetting(Madnox.Presets.Use12Hour)</selected>
 				</control>
 			</control>
@@ -215,7 +215,7 @@
 					<font>Font28_Cond</font>
 					<align>center</align>
 					<textcolor>$VAR[PanelHighlightColorVar]</textcolor>
-					<label>Actions for selected file:</label>
+					<label>$LOCALIZE[31551]:</label>
 				</control>
 
 				<!-- REPLACED LABEL WITH TEXTBOX TO AUTO-WRAP LONG NAMES -->
@@ -231,26 +231,26 @@
 				<control type="image" id="9103">
 					<width>380</width>
 					<height>20</height>
-					<texture>colors/transparent.png</texture>
+					<!-- <texture>colors/transparent.png</texture> -->
 				</control>
 
 				<control type="button" id="9104">
 					<width>380</width>
 					<include>DialogButton</include>
-					<label>Load Preset</label>
+					<label>$LOCALIZE[31550] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE]</label>
 					<textcolor>FF00FF00</textcolor>
 				</control>
 
 				<control type="button" id="9105">
 					<width>380</width>
 					<include>DialogButton</include>
-					<label>Rename Preset</label>
+					<label>$LOCALIZE[118] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE]</label>
 				</control>
 
 				<control type="button" id="9106">
 					<width>380</width>
 					<include>DialogButton</include>
-					<label>[COLOR FFCC4444]Delete Preset[/COLOR]</label>
+					<label>[COLOR FFCC4444]$LOCALIZE[117] [LOWERCASE]$LOCALIZE[13388][/LOWERCASE][/COLOR]</label>
 				</control>
 			</control>
 
@@ -267,14 +267,14 @@
 
 			<control type="label">
 				<description>Preset File Counter</description>
-				<bottom>66</bottom>
-				<right>60</right>
+				<bottom>50</bottom>
+				<right>40</right>
 				<width>460</width>
 				<height>50</height>
 				<align>right</align>
 				<font>Font25_Cond</font>
 				<textcolor>$VAR[PanelSubTextColorVar]</textcolor>
-				<label>$INFO[Container(900).NumItems] Presets Found</label>
+				<label>$INFO[Container(900).NumItems] [LOWERCASE]$LOCALIZE[31549] $LOCALIZE[31552][/LOWERCASE]!</label>
 			</control>
 
 			<control type="scrollbar" id="60">

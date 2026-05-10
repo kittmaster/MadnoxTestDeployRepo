@@ -2726,16 +2726,6 @@ msgid "Customisation of the home screen, widgets and shortcuts menu."
 msgstr "تخصيص الشاشة الرئيسية، الودجات وقائمة الاختصارات."
 
 #: /16x9/Includes_Settings.xml
-msgctxt "#31902"
-msgid "Helper script to provide extra skin features and functions, including additional widgets, cinema mode and blurred backgrounds."
-msgstr "برنامج نصي مساعد لتوفير ميزات ووظائف إضافية للسمة، بما في ذلك ودجات إضافية، وضع السينما والخلفيات الضبابية."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31903"
-msgid "Provides colour selection."
-msgstr "يوفر اختيار الألوان."
-
-#: /16x9/Includes_Settings.xml
 msgctxt "#31904"
 msgid "Script for skinners to let users select an image resource addon."
 msgstr "برنامج نصي للمصممين للسماح للمستخدمين بتحديد ملحق لمورد الصورة."
@@ -2759,11 +2749,6 @@ msgstr "كلمات الأغاني للموسيقى. مطلوب لتمكين كل
 msgctxt "#31908"
 msgid "Sync your collection and watched status with trakt.tv."
 msgstr "مزامنة مجموعتك وحالة المشاهدة مع trakt.tv."
-
-#: /16x9/Includes_Settings.xml
-msgctxt "#31909"
-msgid "TMDb information dialogs and widgets."
-msgstr "مربعات حوار ومعلومات TMDb والودجات."
 
 #: /16x9/Includes_Settings.xml
 msgctxt "#31910"

@@ -20,19 +20,19 @@
 	<onunload>ClearProperty(TMDbHelper.Blur.SourceImage,Home)</onunload>
 	<onunload>ClearProperty(TMDbHelper.Blur.Fallback,Home)</onunload>
 
-	<animation effect="fade" delay="1000" time="480">WindowOpen</animation>
-	<animation effect="fade" time="480">WindowClose</animation>
+	<!-- <animation effect="fade" delay="1000" time="480">WindowOpen</animation> -->
+	<!-- <animation effect="fade" time="480">WindowClose</animation> -->
 	<include>onunload_SkinSettings</include>
 
 	<controls>
 		<!-- Black background -->
-		<control type="image">
+		<!-- <control type="image">
 			<left>0</left>
 			<top>0</top>
 			<width>1920</width>
 			<height>1080</height>
 			<texture>colors/black.png</texture>
-		</control>
+		</control> -->
 
 		<!-- Escape hatch: if still here after 1.5s, force to 1103 -->
 		<control type="image">
